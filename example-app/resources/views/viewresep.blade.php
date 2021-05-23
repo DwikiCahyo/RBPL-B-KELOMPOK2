@@ -66,7 +66,7 @@
         <div class="flex-center position-ref mt-5 ">
             <div class="content">
                 <h1 class="mb-5">List Resep</h1>
-                <table class="table table-dark table-striped table-bordered">
+                <table class="table">
                     <thead>
                         <td>Nama Resep</td>
                         <td>Deskripsi</td>
@@ -86,10 +86,6 @@
                     </body>
                 </table>
             </div>
-        </div>
-    <div class="d-flex justify-content-md-center mt-4 ">
-        <a class="btn btn-success" href="/reseps/create" role="button">Tambah Resep</a>
-    </div>
-        
+        </div>       
     </body>
 </html>

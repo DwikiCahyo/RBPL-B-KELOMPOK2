@@ -86,8 +86,8 @@
                     <div class="content">
                         <div class="title m-b-md">Resep</div>
                             <div class="Links">
-                                <a href="{{ config('app.url')}}/reseps/create" class="btn btn-success mr-3">Tambah Resep</a>
-                                <a href="{{ config('app.url')}}/reseps" class="btn btn-success">View Resep</a>
+                                <a href="{{ config('app.url')}}/reseps/create" >Tambah Resep</a>
+                                <a href="{{ config('app.url')}}/reseps">View Resep</a>
                                 
                             </div>
                         </div>
