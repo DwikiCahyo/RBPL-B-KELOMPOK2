@@ -86,7 +86,7 @@
                         <input type="text" name="langkahLangkah" class="form-control">
                     </div>
 
-                     <button type="submit" class="btn btn-success mt-4">Tambah</button>
+                     <button type="submit" class="btn btn-link">Tambah</button>
                 </form>
             </div>
         </div>
