@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 
 Route::get('/listresep', 'App\Http\Controllers\ResepController@viewlistresep');
+Route::get('/listtempatadmin', 'App\Http\Controllers\TempatController@viewlisttempatadmin');
 
 Auth::routes();
 
