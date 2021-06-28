@@ -14,7 +14,7 @@
                         <label for="" class="font-weight-bold">
                            Judul
                         </label>
-                        <input id="" value="" name="title" type="text" class="form-control"
+                        <input id="" value="" name="judul" type="text" class="form-control"
                            placeholder="" />
                      </div>
                      <!-- description -->
@@ -22,7 +22,7 @@
                         <label for="" class="font-weight-bold">
                            Deskripsi
                         </label>
-                        <textarea id="" name="description" placeholder="" class="form-control "
+                        <textarea id="" name="dekripsi" placeholder="" class="form-control "
                          style="width: 100"></textarea>
                      </div>
                      <!-- description -->
@@ -30,7 +30,7 @@
                         <label for="" class="font-weight-bold">
                            Bahan
                         </label>
-                        <textarea id="" name="description" placeholder="" class="form-control "
+                        <textarea id="" name="bahan" placeholder="" class="form-control "
                            rows="3"></textarea>
                      </div>
                      <!-- content -->
@@ -38,7 +38,7 @@
                         <label for="" class="font-weight-bold">
                            Langkah-langkah
                         </label>
-                        <textarea id="inputlangkah" name="content" placeholder="" class="form-control "
+                        <textarea id="inputlangkah" name="langkahLangkah" placeholder="" class="form-control "
                            rows="20"></textarea>
                      </div>
                   </div>
@@ -61,7 +61,7 @@
                         <label for="" class="font-weight-bold">
                            Waktu Makan
                         </label>
-                        <select id="" name="status" class="custom-select">
+                        <select id="" name="waktuMakan" class="custom-select">
                            <option value="pagi">Pagi</option>
                            <option value="siang">Siang</option>
                            <option value="malam">Malam</option>
@@ -75,7 +75,7 @@
                         <label for="" class="font-weight-bold">
                            Rasa
                         </label>
-                        <select id="" name="status" class="custom-select">
+                        <select id="" name="rasa" class="custom-select">
                            <option value="manis">Manis</option>
                            <option value="pedas">Pedas</option>
                            <option value="asin">Asin</option>
