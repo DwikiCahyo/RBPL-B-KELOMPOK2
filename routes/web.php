@@ -21,6 +21,7 @@ Route::get('/', function () {
 Route::get('/listresep', 'App\Http\Controllers\ResepController@viewlistresep');
 Route::post('/tambahresep/store','App\Http\Controllers\ResepController@store');
 Route::get('/listtempatadmin', 'App\Http\Controllers\TempatController@viewlisttempatadmin');
+Route::post('/tambahtempat/store','App\Http\Controllers\TempatController@store');
 
 Auth::routes();
 

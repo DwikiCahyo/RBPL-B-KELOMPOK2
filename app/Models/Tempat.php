@@ -18,8 +18,9 @@ class Tempat extends Model
         'LinkLokasi',
         'JenisKategori',
         'FotoTempat',
-      
+
     ];
-    
+    protected $fillable = ['idTempat','idAdmin','NamaTempat','DeskripsiTempat','Kota','Kecamatan','LokasiTempat','LinkLokasi','JenisKategori','FotoTempat'];
     protected $table = 'tempats';
+    public $timestamps = false;
 }
