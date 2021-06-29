@@ -18,8 +18,9 @@ class CreateResepsTable extends Migration
             $table->unsignedInteger('idPengguna');
             $table->foreign('idPengguna')->references('idPengguna')->on('akun_penggunas');
             $table->char('NamaResep',200);
-            $table->string('DeskripsiResep',100);
-            $table->string('LangkahLangkah',100);
+            $table->string('DeskripsiResep',500);
+            $table->string('Bahan',5000);
+            $table->string('LangkahLangkah',5000);
             $table->binary('FotoResep');
             $table->char('Rasa',10);
             $table->char('WaktuMakan',10);

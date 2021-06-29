@@ -12,6 +12,7 @@ class Resep extends Model
         'idPengguna',
         'NamaResep',
         'DeskripsiResep',
+        'Bahan',
         'LangkahLangkah',
         'FotoResep',
         'Rasa',
