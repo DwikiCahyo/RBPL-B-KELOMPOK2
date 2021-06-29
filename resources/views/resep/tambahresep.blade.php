@@ -4,7 +4,8 @@
 @section('content')
 <div class="row">
    <div class="col-md-12">
-      <form action="POST">
+    <form method="POST" action="/tambahresep/store" >
+        {{ csrf_field() }}
          <div class="card mr-5 ml-5" >
             <div class="card-body">
                <div class="row d-flex align-items-stretch">
@@ -14,7 +15,7 @@
                         <label for="" class="font-weight-bold">
                            Judul
                         </label>
-                        <input id="" value="" name="judul" type="text" class="form-control"
+                        <input id="" value="" name="namaresep" type="text" class="form-control"
                            placeholder="" />
                      </div>
                      <!-- description -->
@@ -22,7 +23,7 @@
                         <label for="" class="font-weight-bold">
                            Deskripsi
                         </label>
-                        <textarea id="" name="dekripsi" placeholder="" class="form-control "
+                        <textarea id="" name="deskripsi" placeholder="" class="form-control "
                          style="width: 100"></textarea>
                      </div>
                      <!-- description -->
@@ -49,7 +50,7 @@
                            Gambar Masakan
                         </label>
                         <div class="form-control overflow-auto" style="height: 400px">
-                          
+
                         </div>
                      </div>
                   </div>
@@ -69,7 +70,7 @@
                      </div>
                   </div>
                </div>
-                    
+
                      <!-- status -->
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
@@ -93,10 +94,10 @@
                      </div>
                   </div>
                </div>
-               
+
             </div>
          </div>
       </form>
    </div>
  </div>
-@endsection 
+@endsection

@@ -18,6 +18,7 @@ class Resep extends Model
         'Rasa',
         'WaktuMakan',
     ];
-    
+    protected $fillable = ['idResep','idPengguna','NamaResep','DeskripsiResep','Bahan','LangkahLangkah','FotoResep','Rasa','WaktuMakan'];
     protected $table = 'reseps';
+    public $timestamps = false;
 }

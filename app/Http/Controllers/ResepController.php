@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ResepController extends Controller
 {
     //
-  
+
 
 
     public function viewlistresep(){
@@ -21,6 +21,19 @@ class ResepController extends Controller
         $this->middleware('auth');
         return view('resep.tambahresep');
     }
-    
+    public function store(Request $request){
+        $resep = new Resep([
+            'NamaResep' => $request->get('namaresep'),
+            'DeskripsiResep' =>$request->get('deskripsi'),
+            'LangkahLangkah'=> $request->get('langkahLangkah'),
+            'Bahan'=> $request->get('bahan'),
+            'Rasa'=> $request->get('rasa'),
+            'WaktuMakan'=> $request->get('waktuMakan')
+         ]);
+
+         $resep->save();
+         $reseps =  Resep::all();
+         return view('pages.viewlistresep',['reseps' =>$reseps]);
+    }
 
 }
