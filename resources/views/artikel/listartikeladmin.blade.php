@@ -56,6 +56,23 @@
                 </div>
             </div>
         </div>
+        <div class="Container mt-5">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-4">
+                    <img src="https://ecs7.tokopedia.net/blog-tokopedia-com/uploads/2020/11/makanan-indonesia-768x397.jpg" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-8">
+                    <h3>Makanan Khas Daerah di Indonesia Paling Favorit dan Terkenal</h3>
+                    <p> Makanan khas daerah di Indonesia memiliki citra rasa yang unik. 
+                    Beberapa di antaranya bahkan terkenal sampai mancanegara karena kelezatannya, Toppers.
+                    Ada yang pernah terpikirkan, berapa banyak jenis makanan khas daerah di Indonesia? 
+                    Jawaban tentu banyak sekali ya, Toppers........</p>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col-md-2"></div>
 </div>
