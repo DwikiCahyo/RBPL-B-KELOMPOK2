@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Resep extends Model
 {
     protected $fillabel = [
-        'idResep',
+        'id',
         'idPengguna',
         'NamaResep',
         'DeskripsiResep',
@@ -18,7 +18,7 @@ class Resep extends Model
         'Rasa',
         'WaktuMakan',
     ];
-    protected $fillable = ['idResep','idPengguna','NamaResep','DeskripsiResep','Bahan','LangkahLangkah','FotoResep','Rasa','WaktuMakan'];
+    protected $fillable = ['id','idPengguna','NamaResep','DeskripsiResep','Bahan','LangkahLangkah','FotoResep','Rasa','WaktuMakan'];
     protected $table = 'reseps';
     public $timestamps = false;
 }

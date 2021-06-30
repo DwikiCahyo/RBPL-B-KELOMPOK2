@@ -15,8 +15,8 @@ class CreateUlasanResepsTable extends Migration
     {
         Schema::create('ulasan_reseps', function (Blueprint $table) {
             $table->increments('idResepUlasan');
-            $table->unsignedInteger('idResep');
-            $table->foreign('idResep')->references('idResep')->on('reseps');
+            $table->unsignedInteger('id');
+            $table->foreign('id')->references('id')->on('reseps');
             $table->string('NamaPengguna',100);
             $table->string('UlasanResep',500);
 

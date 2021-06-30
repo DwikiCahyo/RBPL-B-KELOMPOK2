@@ -14,7 +14,7 @@ class CreateResepsTable extends Migration
     public function up()
     {
         Schema::create('reseps', function (Blueprint $table) {
-            $table->increments('idResep',10);
+            $table->increments('id',10);
             $table->unsignedInteger('idPengguna');
             $table->foreign('idPengguna')->references('idPengguna')->on('akun_penggunas');
             $table->char('NamaResep',200);
@@ -27,7 +27,7 @@ class CreateResepsTable extends Migration
 
 
         });
-       
+
     }
 
     /**

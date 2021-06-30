@@ -9,10 +9,10 @@ class ulasanResep extends Model
 {
     protected $fillabel = [
         'idResepUlasan',
-        'idResep',
+        'id',
         'NamaPengguna',
-        'UlasanResep',    
+        'UlasanResep',
     ];
-    
+
     protected $table = 'ulasan_reseps';
 }

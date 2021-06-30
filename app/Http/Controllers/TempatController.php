@@ -12,8 +12,9 @@ class TempatController extends Controller
         return view ('tempat.listtempatadmin',['tempats'=>$tempat]);
 
      }
-     public function tambahresep(){
+     public function tambahtempat(){
         $this->middleware('auth');
+        return view('tempat.tambahtempatadmin');
      }
      public function store(Request $request){
         $tempat = new Tempat([
@@ -34,4 +35,28 @@ class TempatController extends Controller
          return view('tempat.listtempatadmin',['tempats' =>$tempat]);
     }
 
+    //EDIT TEMPAT
+    public function edittempat($id)
+    {
+        $tempat = Tempat::findOrFail($id);
+        return view('tempat.edittempat');
+    }
+
+    public function update(Request $request, $id)
+    {
+        $tempat = Tempat::findOrFail($id) -> update([
+            'idTempat' => $request->get('idtempat'),
+            'idAdmin' =>$request->get('idadmin'),
+            'NamaTempat'=> $request->get('namatempat'),
+            'DeskripsiTempat'=> $request->get('deskripsitempat'),
+            'Kota'=> $request->get('kota'),
+            'Kecamatan'=> $request->get('kecamatan'),
+            'LokasiTempat'=> $request->get('lokasitempat'),
+            'JenisKategori'=> $request->get('jeniskategori'),
+            'LinkLokasi'=> $request->get('linklokasi'),
+            'FotoTempat'=> $request->get('fototempat')
+         ]);
+
+         return redirect('/tempatadmin');
+    }
 }

@@ -35,5 +35,8 @@ class ResepController extends Controller
          $reseps =  Resep::all();
          return view('pages.viewlistresep',['reseps' =>$reseps]);
     }
-
+    public function detailresep($idResep)
+    {
+        return view('resep.reseppengguna', ['reseps' => Resep::findOrFail($idResep)]);
+    }
 }
