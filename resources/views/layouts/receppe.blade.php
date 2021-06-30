@@ -44,7 +44,7 @@
                         <a href="#pablo" class="nav-link">Resep</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#pablo" class="nav-link">Artikel</a>
+                        <a href="/listartikeladmin" class="nav-link">Artikel</a>
                     </li>
                     <li class="nav-item">
                         <a href="#pablo" class="nav-link">Tempat</a>
