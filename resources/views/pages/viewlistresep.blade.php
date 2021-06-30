@@ -14,7 +14,7 @@
                     <div class="card-body">
                       <h4 class="card-title">{{$r->NamaResep}}</h4>
                       <p class="card-text">{{$r->DeskripsiResep}}</p>
-                      <a href="" class="btn btn-primary">Lihat selengkapnya</a>
+                      <a href="/resep/{idResep}" class="btn btn-primary">Lihat selengkapnya</a>
                     </div>
                  </div>         
         </div>
