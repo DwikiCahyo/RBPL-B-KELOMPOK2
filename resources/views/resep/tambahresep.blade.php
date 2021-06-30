@@ -45,16 +45,6 @@
                   </div>
                   <div class="col-md-4">
                      <!-- catgeory -->
-                     <div class="form-group">
-                        <label for="" class="font-weight-bold">
-                           Gambar Masakan
-                        </label>
-                        <div class="form-control overflow-auto" style="height: 400px">
-
-                        </div>
-                     </div>
-                  </div>
-               </div>
                <div class="row">
                   <div class="col-md-12">
                      <!-- tag -->
@@ -81,6 +71,15 @@
                            <option value="pedas">Pedas</option>
                            <option value="asin">Asin</option>
                         </select>
+                     </div>
+
+                     <div class="input-group">
+                        <div class="custom-file">
+                           <label for="">Pilih Gambar </label>
+                           <input type="file" id="gambar" name="FotoResep" style="display: none;" />
+                           <input type="button" value="Browse..." onclick="document.getElementById('gambar').click();" />
+                          
+                        </div>
                      </div>
                   </div>
                   <div class="row mr-5">

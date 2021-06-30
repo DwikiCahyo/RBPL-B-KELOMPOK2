@@ -28,7 +28,8 @@ class ResepController extends Controller
             'LangkahLangkah'=> $request->get('langkahLangkah'),
             'Bahan'=> $request->get('bahan'),
             'Rasa'=> $request->get('rasa'),
-            'WaktuMakan'=> $request->get('waktuMakan')
+            'WaktuMakan'=> $request->get('waktuMakan'),
+            'FotoResep' => $request->get('FotoResep')
          ]);
 
          $resep->save();
