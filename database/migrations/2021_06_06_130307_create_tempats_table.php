@@ -14,7 +14,7 @@ class CreateTempatsTable extends Migration
     public function up()
     {
         Schema::create('tempats', function (Blueprint $table) {
-            $table->increments('idTempat',10);
+            $table->increments('id',10);
             $table->unsignedInteger('idAdmin');
             $table->foreign('idAdmin')->references('idAdmin')->on('akun_admins');
             $table->char('NamaTempat',100);

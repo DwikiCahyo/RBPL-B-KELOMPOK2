@@ -45,7 +45,7 @@ class TempatController extends Controller
     public function update(Request $request, $id)
     {
         $tempat = Tempat::findOrFail($id) -> update([
-            'idTempat' => $request->get('idtempat'),
+            'id' => $request->get('idtempat'),
             'idAdmin' =>$request->get('idadmin'),
             'NamaTempat'=> $request->get('namatempat'),
             'DeskripsiTempat'=> $request->get('deskripsitempat'),
@@ -59,7 +59,7 @@ class TempatController extends Controller
 
          return redirect('/tempatadmin');
     }
-    Public function read($idTempat){
-        return view('tempat.detailtempat', ['Tempats' => Tempat::findOrFail($idTempat)]);
+    Public function read($id){
+        return view('tempat.detailtempat', ['Tempats' => Tempat::findOrFail($id)]);
     }
 }

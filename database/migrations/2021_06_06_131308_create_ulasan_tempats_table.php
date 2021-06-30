@@ -15,11 +15,11 @@ class CreateUlasanTempatsTable extends Migration
     {
         Schema::create('ulasan_tempats', function (Blueprint $table) {
             $table->increments('idTempatUlasan');
-            $table->unsignedInteger('idTempat');
-            $table->foreign('idTempat')->references('idTempat')->on('tempats');
+            $table->unsignedInteger('id');
+            $table->foreign('id')->references('id')->on('tempats');
             $table->string('NamaPengguna',100);
             $table->string('UlasanTempat',500);
-            
+
         });
     }
 

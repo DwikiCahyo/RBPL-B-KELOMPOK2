@@ -14,7 +14,7 @@
                     <div class="col-md-8">
                     <h2>{{$t->NamaTempat}}</h2>
                     <p>{{$t->DeskripsiTempat}}</p>
-                    <a href="/tempat/idTempat{{ $t->idTempat}}" class="btn btn-primary">Lihat</a>
+                    <a href="/tempat/{{ $t->id}}" class="btn btn-primary">Lihat</a>
                     </div>
                 </div>
             </div>
