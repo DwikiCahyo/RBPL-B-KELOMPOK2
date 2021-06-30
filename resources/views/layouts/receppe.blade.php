@@ -47,7 +47,7 @@
                         <a href="/listartikeladmin" class="nav-link">Artikel</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#pablo" class="nav-link">Tempat</a>
+                        <a href="listtempatadmin" class="nav-link">Tempat</a>
                     </li>
                 </ul>
     
