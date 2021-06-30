@@ -19,12 +19,12 @@
             <div class="col-md-4">
                 <div class="card card-user">
                     <div class="image">
-                        <img src="{{ asset('paper/img/damir-bosnjak.jpg') }}" alt="...">
+                        <img src="{{ asset('paper/img/sampul.jpg') }}" alt="...">
                     </div>
                     <div class="card-body">
                         <div class="author">
                             <a href="#">
-                                <img class="avatar border-gray" src="{{ asset('paper/img/mike.jpg') }}" alt="...">
+                                <img class="avatar border-gray" src="{{ asset('paper/img/galuhcantik.jpg') }}" alt="...">
 
                                 <h5 class="title">{{ __(auth()->user()->name)}}</h5>
                             </a>
@@ -33,12 +33,10 @@
                             </p>
                         </div>
                         <p class="description text-center">
-                            {{ __('I like the way you work it') }}
-                            <br> {{ __('No diggity') }}
-                            <br> {{ __('I wanna bag it up') }}
+                            {{ __('Quotessssssssss aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa') }}
                         </p>
                     </div>
-                    <div class="card-footer">
+                    <!-- <div class="card-footer">
                         <hr>
                         <div class="button-container">
                             <div class="row">
@@ -62,9 +60,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-                <div class="card">
+                <!-- <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">{{ __('Team Members') }}</h4>
                     </div>
@@ -135,7 +133,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="col-md-8 text-center">
                 <form class="col-md-12" action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
@@ -143,11 +141,24 @@
                     @method('PUT')
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="title">{{ __('Edit Profile') }}</h5>
+                            <h5 class="title">{{ __('Detail Account') }}</h5>
                         </div>
                         <div class="card-body">
                             <div class="row">
                                 <label class="col-md-3 col-form-label">{{ __('Name') }}</label>
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <input type="text" name="name" class="form-control" placeholder="Name" value="{{ auth()->user()->name }}" required>
+                                    </div>
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback" style="display: block;" role="alert">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-md-3 col-form-label">{{ __('Username') }}</label>
                                 <div class="col-md-9">
                                     <div class="form-group">
                                         <input type="text" name="name" class="form-control" placeholder="Name" value="{{ auth()->user()->name }}" required>
@@ -172,10 +183,40 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="card-body">
+                            <div class="row">
+                                <label class="col-md-3 col-form-label">{{ __('Old Password') }}</label>
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <input type="password" name="old_password" class="form-control" placeholder="Old password" required>
+                                    </div>
+                                    @if ($errors->has('old_password'))
+                                        <span class="invalid-feedback" style="display: block;" role="alert">
+                                            <strong>{{ $errors->first('old_password') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-md-3 col-form-label">{{ __('New Password') }}</label>
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                    </div>
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback" style="display: block;" role="alert">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
                         </div>
                         <div class="card-footer ">
                             <div class="row">
-                                <div class="col-md-12 text-center">
+                                <div class="col-md-6 text-center">
+                                    <button type="delete" class="btn btn-info btn-round">{{ __('Hapus') }}</button>
+                                </div>
+                                <div class="col-md-6 text-center">
                                     <button type="submit" class="btn btn-info btn-round">{{ __('Save Changes') }}</button>
                                 </div>
                             </div>
@@ -185,7 +226,7 @@
                 <form class="col-md-12" action="{{ route('profile.password') }}" method="POST">
                     @csrf
                     @method('PUT')
-                    <div class="card">
+                    <!-- <div class="card">
                         <div class="card-header">
                             <h5 class="title">{{ __('Change Password') }}</h5>
                         </div>
@@ -237,7 +278,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </form>
             </div>
         </div>
