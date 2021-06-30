@@ -59,4 +59,7 @@ class TempatController extends Controller
 
          return redirect('/tempatadmin');
     }
+    Public function read($idTempat){
+        return view('tempat.detailtempat', ['Tempats' => Tempat::findOrFail($idTempat)]);
+    }
 }

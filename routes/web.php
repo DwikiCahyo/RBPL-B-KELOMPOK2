@@ -12,6 +12,7 @@ Route::get('/', function () {
 Route::get('/listresep', 'App\Http\Controllers\ResepController@viewlistresep');
 Route::post('/tambahresep/store','App\Http\Controllers\ResepController@store');
 Route::get('/listtempatadmin', 'App\Http\Controllers\TempatController@viewlisttempatadmin');
+Route::get('/tempat/{idTempat}', 'App\Http\Controllers\TempatController@read');
 Route::post('/tambahtempat/store','App\Http\Controllers\TempatController@store');
 Route::post('/edittempat/update', 'App\Http\Controllers\ResepController@update');
 Route::get('/resep/{id}', 'App\Http\Controllers\ResepController@detailresep');
