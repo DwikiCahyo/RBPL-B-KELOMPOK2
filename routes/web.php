@@ -22,9 +22,13 @@ Route::get('/listresep', 'App\Http\Controllers\ResepController@viewlistresep');
 Route::post('/tambahresep/store','App\Http\Controllers\ResepController@store');
 Route::get('/listtempatadmin', 'App\Http\Controllers\TempatController@viewlisttempatadmin');
 Route::post('/tambahtempat/store','App\Http\Controllers\TempatController@store');
+<<<<<<< HEAD
 Route::post('/edittempat/update', 'App\Http\Controllers\ResepController@update');
 Route::get('/resep/{idResep}', 'App\Http\Controllers\ResepController@detailresep');
 
+=======
+Route::get('/listartikeladmin', 'App\Http\Controllers\ArtikelController@viewlistartikeladmin');
+>>>>>>> b9f61a94b193f4efc91668018324138bab77e80f
 
 Auth::routes();
 
