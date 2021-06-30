@@ -53,7 +53,7 @@
                         <label for="" class="font-weight-bold">
                             Link Lokasi
                         </label>
-                        <input id="" value="" name="link-lokasi" type="text" class="form-control"
+                        <input id="" value="" name="linklokasi" type="text" class="form-control"
                            placeholder="" />
                      </div>
                      <div class="row">
@@ -63,7 +63,7 @@
                               <label for="" class="font-weight-bold">
                                  Kategori
                               </label>
-                              <select id="" name="waktuMakan" class="custom-select">
+                              <select id="" name="jenisKategori" class="custom-select">
                                  <option value="pagi">Pasar</option>
                                  <option value="siang">Toko</option>
                                  <option value="malam">Supermarket</option>

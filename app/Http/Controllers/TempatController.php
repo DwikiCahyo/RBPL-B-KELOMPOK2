@@ -14,7 +14,7 @@ class TempatController extends Controller
      }
      public function tambahtempat(){
         $this->middleware('auth');
-        return view('tempat.tambahtempatadmin');
+        return view('tempat.tambahtempat');
      }
      public function store(Request $request){
         $tempat = new Tempat([
@@ -24,8 +24,8 @@ class TempatController extends Controller
             'DeskripsiTempat'=> $request->get('deskripsitempat'),
             'Kota'=> $request->get('kota'),
             'Kecamatan'=> $request->get('kecamatan'),
-            'LokasiTempat'=> $request->get('lokasitempat'),
-            'JenisKategori'=> $request->get('jeniskategori'),
+            'LokasiTempat'=> $request->get('lokasi'),
+            'JenisKategori'=> $request->get('jenisKategori'),
             'LinkLokasi'=> $request->get('linklokasi'),
             'FotoTempat'=> $request->get('fototempat')
          ]);
