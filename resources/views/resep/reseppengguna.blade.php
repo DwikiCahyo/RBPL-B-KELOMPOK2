@@ -43,29 +43,4 @@
       </div>
     </div>
   </div>
-
-<!-- <div class="container">
-
-    <div class="row">
-
-                <h1 class = "judul" >Cireng Isi Kejuu</h1>
-                <br>
-                <h1 class="judul">Gambar Masakan</h1>
-
-                <br>
-                <h1 class = "judul" style="text-align: center; font-size: large;">Deskripsi</h1>
-
-                <h1 class = "judul" style="text-align: center; font-size: large;">Bahan</h1>
-                <br>
-                <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam varius quam in mi ultricies, non maximus ante consequat. Aliquam porttitor in dui convallis lacinia. Pellentesque risus metus, laoreet viverra dapibus nec, mattis eu lorem. Praesent elementum orci varius cursus pulvinar. Donec dolor dolor, commodo et lorem rutrum, rutrum vehicula libero. Nulla in sodales lorem. Praesent leo diam, dictum id diam nec, imperdiet luctus massa. Curabitur vel velit risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin eget arcu sit amet magna rhoncus facilisis in ac eros. Duis placerat dictum arcu, in consequat lorem dapibus ut. Duis ultrices malesuada sapien, sed mollis tortor volutpat sit amet. In suscipit, magna non suscipit auctor, eros tellus condimentum lorem, sed laoreet urna dui in enim. Suspendisse turpis ex, luctus non luctus nec, tincidunt in diam.</p>
-
-                <h1 class = "judul" style="text-align: center; font-size: large;">Langkah-Langkah</h1>
-                <br>
-                <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam varius quam in mi ultricies, non maximus ante consequat. Aliquam porttitor in dui convallis lacinia. Pellentesque risus metus, laoreet viverra dapibus nec, mattis eu lorem. Praesent elementum orci varius cursus pulvinar. Donec dolor dolor, commodo et lorem rutrum, rutrum vehicula libero. Nulla in sodales lorem. Praesent leo diam, dictum id diam nec, imperdiet luctus massa. Curabitur vel velit risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin eget arcu sit amet magna rhoncus facilisis in ac eros. Duis placerat dictum arcu, in consequat lorem dapibus ut. Duis ultrices malesuada sapien, sed mollis tortor volutpat sit amet. In suscipit, magna non suscipit auctor, eros tellus condimentum lorem, sed laoreet urna dui in enim. Suspendisse turpis ex, luctus non luctus nec, tincidunt in diam.</p>
-
-
-        </div>
-    </div>
-
-
 @endsection

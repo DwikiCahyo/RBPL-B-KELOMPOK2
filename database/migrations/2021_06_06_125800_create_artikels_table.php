@@ -14,7 +14,7 @@ class CreateArtikelsTable extends Migration
     public function up()
     {
         Schema::create('artikels', function (Blueprint $table) {
-            $table->increments('idArtikel',10);
+            $table->increments('id',10);
             $table->unsignedInteger('idAdmin');
             $table->foreign('idAdmin')->references('idAdmin')->on('akun_admins');
             $table->char('JudulArtikel',100);
