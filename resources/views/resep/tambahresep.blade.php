@@ -4,7 +4,7 @@
 @section('content')
 <div class="row">
    <div class="col-md-12">
-    <form method="POST" action="/tambahresep/store" >
+    <form method="POST" action="/tambahresep/store"  enctype="multipart/form-data" >
         {{ csrf_field() }}
          <div class="card mr-5 ml-5" >
             <div class="card-body">
@@ -72,15 +72,14 @@
                            <option value="asin">Asin</option>
                         </select>
                      </div>
-
                      <div class="input-group">
                         <div class="custom-file">
                            <label for="">Pilih Gambar </label>
-                           <input type="file" id="gambar" name="FotoResep" style="display: none;" />
-                           <input type="button" value="Browse..." onclick="document.getElementById('gambar').click();" />
-                          
+                           <input type="file" id="gambar" name="FotoResep" style="display:block;" />
+
                         </div>
                      </div>
+
                   </div>
                   <div class="row mr-5">
                      <div class="col-md-12">

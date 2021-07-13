@@ -19,11 +19,13 @@
         body{
             background-color: antiquewhite;
         }
-        #inputlangkah{
-          
-            
+        .card-img-top{
+            width: 100%;
+            height: 20vh;
+            object-fit: cover;
+            box-shadow: 1vh;
         }
-      
+
     </style>
 </head>
 <body>
@@ -37,7 +39,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-    
+
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav">
                     <li class="nav-item ">
@@ -50,7 +52,7 @@
                         <a href="listtempatadmin" class="nav-link">Tempat</a>
                     </li>
                 </ul>
-    
+
                 <form class="form-inline ml-auto">
                     <div class="form-group no-border">
                       <input type="text" class="form-control" placeholder="Search">
@@ -72,7 +74,7 @@
         <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('My profile') }}</a>
     </div>
   </div>
-               
+
         </div>
     </nav>
 
@@ -93,12 +95,12 @@
     <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="{{ asset('paper') }}/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
     <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-    
+
     <!-- Sharrre libray -->
     <script src="../assets/demo/jquery.sharrre.js"></script>
-    
+
     @stack('scripts')
 
-    
+
 </body>
 </html>
