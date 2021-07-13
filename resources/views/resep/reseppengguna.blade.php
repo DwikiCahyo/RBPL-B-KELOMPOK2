@@ -6,6 +6,7 @@
 <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-12 mx-auto">
+        {{method_field('delete')}}
         <div class="card card-resep my-5">
 
           <div class="card-body">
