@@ -13,7 +13,12 @@ class ArtikelController extends Controller
     public function viewlistartikeladmin(){
         $artikel = Artikel::all();
         return view ('artikel.listartikeladmin',['artikels'=>$artikel]);
-     }
+    }
+    //Menampilkan view list artikel pengguna
+    public function viewlistartikelpengguna(){
+        $artikel = Artikel::all();
+        return view ('artikel.listartikelpengguna',['artikels'=>$artikel]);
+    }
      //Menampilkan view tambah artikel
     public function tambahartikel(){
         $this->middleware('auth');
@@ -37,7 +42,10 @@ class ArtikelController extends Controller
     }
     //menampilkan view detail artikel
     public function viewdetailartikel($id){
-        return view('artikel.detailartikel', ['artikels' => Artikel::find($id)]);
+        return view('artikel.detailartikeladmin', ['artikels' => Artikel::find($id)]);
+    }
+    public function viewdetailartikelpengguna($id){
+        return view('artikel.detailartikelpengguna', ['artikels' => Artikel::find($id)]);
     }
     //menampilkan view edit artikel
     public function vieweditartikel($id){

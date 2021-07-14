@@ -18,7 +18,7 @@ class CreateArtikelsTable extends Migration
             $table->unsignedInteger('idAdmin');
             $table->foreign('idAdmin')->references('idAdmin')->on('akun_admins');
             $table->char('JudulArtikel',100);
-            $table->string('Deskripsi Artikel',10000);
+            $table->string('DeskripsiArtikel',10000);
             $table->binary('FotoArtikel');
 
         });

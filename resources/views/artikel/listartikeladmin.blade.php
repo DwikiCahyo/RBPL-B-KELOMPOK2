@@ -1,3 +1,4 @@
+
 @extends('layouts.receppe')
 @section('title','List Artikel')
 @section('content')
@@ -12,8 +13,8 @@
                     <img src="{{ asset('paper') }}/image/{{ $a->FotoArtikel }}" alt="" class="img-fluid">
                     </div>
                     <div class="col-md-8">
-                    <h2>{{$t->JudulArtikel}}</h2>
-                    <p>{{$t->DeskripsiArtikel}}</p>
+                    <h2>{{$a->JudulArtikel}}</h2>
+                    <p>{{$a->DeskripsiArtikel}}</p>
                     <a href="{{ route('detailArtikel',$a->id) }}" class="btn btn-primary">Lihat</a>
                     </div>
                 </div>

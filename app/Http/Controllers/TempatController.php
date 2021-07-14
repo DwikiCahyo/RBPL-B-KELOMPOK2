@@ -14,6 +14,11 @@ class TempatController extends Controller
         $tempat = Tempat::all();
         return view ('tempat.listtempatadmin',['tempats'=>$tempat]);
      }
+    //Menampilkan view list tempat pengguna
+    public function viewlisttempatpengguna(){
+        $tempat = Tempat::all();
+        return view ('tempat.listtempatpengguna',['tempats'=>$tempat]);
+     }
      //Menampilkan view tambah tempat
     public function tambahtempat(){
         $this->middleware('auth');
@@ -42,6 +47,9 @@ class TempatController extends Controller
     //menampilkan view detail tempat
     public function viewdetailtempat($id){
         return view('tempat.detailtempat', ['tempats' => Tempat::find($id)]);
+    }
+    public function viewdetailtempatpengguna($id){
+        return view('tempat.detailtempatpengguna', ['tempats' => Tempat::find($id)]);
     }
     //menampilkan view edit tempat
     public function viewedittempat($id){

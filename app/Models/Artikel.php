@@ -15,6 +15,7 @@ class Artikel extends Model
         'FotoArtikel',
 
     ];
-
+    protected $fillable = ['id','idAdmin','JudulArtikel','DeskripsiArtikel','FotoArtikel'];
     protected $table = 'artikels';
+    public $timestamps = false;
 }

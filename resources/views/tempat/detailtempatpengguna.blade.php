@@ -26,12 +26,6 @@
                     <td>{{$tempats->LokasiTempat}}</td>
                 </tr>
             </table>
-            <a href="{{ route('editTempat',$tempats->id) }}">
-                <button class="btn btn-warning btn-sm" type="button">Edit</button>
-            </a>
-            <a href="">
-              <button class="btn btn-warning btn-sm" type="button">Hapus</button>
-          </a>
         </div>
       </div>
     </div>

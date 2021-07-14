@@ -22,16 +22,20 @@ Route::patch('detailresep/editresep/updateresep/{id}', [App\Http\Controllers\Res
 Route::delete('detailresep/hapusresep/{id}', [App\Http\Controllers\ResepController::class, 'hapusresep'])->name('hapusResep');
 //TEMPAT ROUTE
 Route::get('/listtempatadmin', 'App\Http\Controllers\TempatController@viewlisttempatadmin')->name('listtempatadmin');
+Route::get('/listtempatpengguna', 'App\Http\Controllers\TempatController@viewlisttempatpengguna')->name('listtempatpengguna');
 Route::get('/tambahtempat', 'App\Http\Controllers\TempatController@tambahtempat');
 Route::post('/tambahtempat/store','App\Http\Controllers\TempatController@store');
 Route::get('detailTempat/{id}', [App\Http\Controllers\TempatController::class, 'viewdetailtempat'])->name('detailTempat');
+Route::get('detailTempatpengguna/{id}', [App\Http\Controllers\TempatController::class, 'viewdetailtempatpengguna'])->name('detailTempatPengguna');
 Route::get('editTempat/{id}', [App\Http\Controllers\TempatController:: class,'viewedittempat'])->name('editTempat');
 Route::patch('editTempat/updatetempat/{id}', [App\Http\Controllers\TempatController::class, 'update'])->name('updateTempat');
 //ARTIKEL ROUTE
 Route::get('/listartikeladmin', 'App\Http\Controllers\ArtikelController@viewlistartikeladmin')->name('listartikeladmin');
+Route::get('/listartikelpengguna', 'App\Http\Controllers\ArtikelController@viewlistartikelpengguna')->name('listartikelpengguna');
 Route::get('/tambahartikel', 'App\Http\Controllers\ArtikelController@tambahartikel');
 Route::post('/tambahartikel/store','App\Http\Controllers\ArtikelController@store');
-Route::get('detailartikel/{id}', [App\Http\Controllers\ArtikelController::class, 'viewdetailartikel'])->name('detailArtikel');
+Route::get('detailartikeladmin/{id}', [App\Http\Controllers\ArtikelController::class, 'viewdetailartikel'])->name('detailArtikel');
+Route::get('detailartikelpengguna/{id}', [App\Http\Controllers\ArtikelController::class, 'viewdetailartikelpengguna'])->name('detailArtikelPengguna');
 Route::get('editartikel/{id}', [App\Http\Controllers\ArtikelController:: class,'vieweditartikel'])->name('editArtikel');
 Route::patch('editartikel/updateartikel/{id}', [App\Http\Controllers\ArtikelController::class, 'update'])->name('updateArtikel');
 
