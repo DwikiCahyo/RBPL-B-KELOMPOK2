@@ -24,6 +24,6 @@
     </div>
     <div class="col-md-2"></div>
     <div class="text-right fixed-bottom mt-5 mr-5 ml-5">
-        <a href="/tambahartikel"  class="btn btn-primary btn-lg btn-icon btn-round"></a>
+    <a href="/tambahartikel"> <i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i></a>
 </div>
 @endsection

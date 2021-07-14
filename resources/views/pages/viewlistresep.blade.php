@@ -21,7 +21,8 @@
         @endforeach
       </div>
     <div class="text-right fixed-bottom mt-5 mr-5 ml-5">
-  <a href="/tambahresep"  class="btn btn-primary btn-lg btn-icon btn-round"></a>
+  <a href="/tambahresep"> <i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i></a>
+  <p></p>
 </div>
 
 

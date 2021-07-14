@@ -6,7 +6,7 @@
             </div>
         </a>
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-            {{ __('Creative Tim') }}
+            {{ __('RECCAPE') }}
         </a>
     </div>
     <div class="sidebar-wrapper">
@@ -19,9 +19,9 @@
             </li>
             <li class="{{ $elementActive == 'user' || $elementActive == 'profile' ? 'active' : '' }}">
                 <a data-toggle="collapse" aria-expanded="true" href="#laravelExamples">
-                    <i class="nc-icon"><img src="{{ asset('paper/img/laravel.svg') }}"></i>
+                <i class="fa fa-user-circle fa-4x" aria-hidden="true"></i>
                     <p>
-                            {{ __('Laravel examples') }}
+                            {{ __('USER') }}
                         <b class="caret"></b>
                     </p>
                 </a>
@@ -43,24 +43,27 @@
                 </div>
             </li>
             <li class="{{ $elementActive == 'icons' ? 'active' : '' }}">
-                <a href="{{ route('page.index', 'icons') }}">
-                    <i class="nc-icon nc-diamond"></i>
-                    <p>{{ __('Icons') }}</p>
+                <!-- <a href="{{ route('page.index', 'icons') }}"> -->
+                    <a href="/listresep">
+                <i class="fa fa-cutlery fa-4x" aria-hidden="true"></i>
+                    <p>{{ __('RESEP') }}</p>
                 </a>
             </li>
             <li class="{{ $elementActive == 'map' ? 'active' : '' }}">
-                <a href="{{ route('page.index', 'map') }}">
-                    <i class="nc-icon nc-pin-3"></i>
-                    <p>{{ __('Maps') }}</p>
+                <!-- <a href="{{ route('page.index', 'map') }}"> -->
+                <a href="/listartikeladmin">
+                <i class="fa fa-sticky-note fa-4x" aria-hidden="true"></i>
+                    <p>{{ __('ARTIKEL') }}</p>
                 </a>
             </li>
             <li class="{{ $elementActive == 'notifications' ? 'active' : '' }}">
-                <a href="{{ route('page.index', 'notifications') }}">
-                    <i class="nc-icon nc-bell-55"></i>
-                    <p>{{ __('Notifications') }}</p>
+                <!-- <a href="{{ route('page.index', 'notifications') }}"> -->
+                <a href="/listtempatadmin">
+                <i class="fa fa-map-marker fa-4x" aria-hidden="true"></i>
+                    <p>{{ __('TEMPAT') }}</p>
                 </a>
             </li>
-            <li class="{{ $elementActive == 'tables' ? 'active' : '' }}">
+            <!-- <li class="{{ $elementActive == 'tables' ? 'active' : '' }}">
                 <a href="{{ route('page.index', 'tables') }}">
                     <i class="nc-icon nc-tile-56"></i>
                     <p>{{ __('Table List') }}</p>
@@ -70,14 +73,14 @@
                 <a href="{{ route('page.index', 'typography') }}">
                     <i class="nc-icon nc-caps-small"></i>
                     <p>{{ __('Typography') }}</p>
-                </a>
-            </li>
+                </a> -->
+            <!-- </li>
             <li class="active-pro {{ $elementActive == 'upgrade' ? 'active' : '' }}">
                 <a href="{{ route('page.index', 'upgrade') }}" class="bg-danger">
                     <i class="nc-icon nc-spaceship text-white"></i>
                     <p class="text-white">{{ __('Upgrade to PRO') }}</p>
                 </a>
-            </li>
+            </li> -->
         </ul>
     </div>
 </div>

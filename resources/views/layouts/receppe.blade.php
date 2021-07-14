@@ -16,8 +16,10 @@
     <title> @yield('title')</title>
 
     <style>
-        body{
-            background-color: antiquewhite;
+        body {
+            background-image: url("https://www.hdnicewallpapers.com/Walls/Big/Food%20and%20Drinks/Fruit_and_Egg_Foods_4K_Wallpaper.jpg");
+            /* background-color: #cccccc; */
+            background-size: 100%;
         }
         .card-img-top{
             width: 100%;
