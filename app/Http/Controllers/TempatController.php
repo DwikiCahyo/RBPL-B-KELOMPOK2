@@ -4,62 +4,63 @@ namespace App\Http\Controllers;
 
 use App\Models\Tempat;
 use Illuminate\Http\Request;
+use App\Models\Answer;
+use App\Models\Comment;
 
 class TempatController extends Controller
 {
+    //Menampilkan view list tempat admin
     public function viewlisttempatadmin(){
         $tempat = Tempat::all();
         return view ('tempat.listtempatadmin',['tempats'=>$tempat]);
-
      }
-     public function tambahtempat(){
+     //Menampilkan view tambah tempat
+    public function tambahtempat(){
         $this->middleware('auth');
         return view('tempat.tambahtempat');
      }
-     public function store(Request $request){
-        $tempat = new Tempat([
-            'idTempat' => $request->get('idtempat'),
-            'idAdmin' =>$request->get('idadmin'),
-            'NamaTempat'=> $request->get('namatempat'),
-            'DeskripsiTempat'=> $request->get('deskripsitempat'),
-            'Kota'=> $request->get('kota'),
-            'Kecamatan'=> $request->get('kecamatan'),
-            'LokasiTempat'=> $request->get('lokasi'),
-            'JenisKategori'=> $request->get('jenisKategori'),
-            'LinkLokasi'=> $request->get('linklokasi'),
-            'FotoTempat'=> $request->get('fototempat')
-         ]);
-
-         $tempat->save();
-         $tempat =  Tempat::all();
-         return view('tempat.listtempatadmin',['tempats' =>$tempat]);
+     //Menyimpan file form tambah tempat
+    public function store(Request $request){
+         //Menyimpan file gambar
+        $FotoTempat = $request->file('FotoTempat');
+        $nama_foto_tempat = time()."_".$FotoTempat->getClientOriginalName();
+        //upload foto
+        $file_upload = 'paper/image';
+        $FotoTempat->move($file_upload,$nama_foto_tempat);
+        //Menyimpan form ke dalam model tempat
+        Tempat::create([
+            'FotoTempat' =>$nama_foto_tempat,
+            'NamaTempat'=>$request->NamaTempat,
+            'DeskripsiTempat' =>$request->DeskripsiTempat,
+            'Kota'=> $request->Kota,
+            'Kecamatan'=> $request->Kecamatan,
+            'LokasiTempat'=> $request->LokasiTempat,
+            'JenisKategori'=> $request->JenisKategori,
+          ]);
+        return redirect('listtempatadmin');
     }
-
-    //EDIT TEMPAT
-    public function edittempat($id)
-    {
-        $tempat = Tempat::findOrFail($id);
-        return view('tempat.edittempat');
+    //menampilkan view detail tempat
+    public function viewdetailtempat($id){
+        return view('tempat.detailtempat', ['tempats' => Tempat::find($id)]);
     }
-
-    public function update(Request $request, $id)
-    {
-        $tempat = Tempat::findOrFail($id) -> update([
-            'id' => $request->get('idtempat'),
-            'idAdmin' =>$request->get('idadmin'),
-            'NamaTempat'=> $request->get('namatempat'),
-            'DeskripsiTempat'=> $request->get('deskripsitempat'),
-            'Kota'=> $request->get('kota'),
-            'Kecamatan'=> $request->get('kecamatan'),
-            'LokasiTempat'=> $request->get('lokasitempat'),
-            'JenisKategori'=> $request->get('jeniskategori'),
-            'LinkLokasi'=> $request->get('linklokasi'),
-            'FotoTempat'=> $request->get('fototempat')
-         ]);
-
-         return redirect('/tempatadmin');
+    //menampilkan view edit tempat
+    public function viewedittempat($id){
+    $tempats = Tempat::find($id);
+    return view('tempat.edittempat',['tempats' => $tempats]);
     }
-    Public function read($id){
-        return view('tempat.detailtempat', ['Tempats' => Tempat::findOrFail($id)]);
+    //menyimpan form edit tempat ke dalam model tempat
+    public function update(Request $request ,$id){
+    $tempats = Tempat::find($id);
+    $tempats->NamaTempat=$request->NamaTempat;
+    $tempats->DeskripsiTempat=$request->DeskripsiTempat;
+    $tempats->Kota=$request->Kota;
+    $tempats->Kecamatan=$request->Kecamatan;
+    $tempats->LokasiTempat=$request->LokasiTempat;
+    $tempats->JenisKategori=$request->JenisKategori;
+
+
+    $tempats->save();
+
+    return redirect('listtempatadmin');
     }
 }

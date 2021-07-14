@@ -1,38 +1,38 @@
 @extends('layouts.receppe')
-@section('title','List Resep')
+@section('title','Edit Tempat')
 
 @section('content')
 <div class="row">
    <div class="col-md-12">
-    @foreach($tempat as $t)
-    <form method="POST" action="/tempat/update" >
-        {{ csrf_field() }}
+    <form action="{{ route('updateTempat',$tempats->id) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        @method("patch")
          <div class="card mr-5 ml-5" >
             <div class="card-body">
                <div class="row d-flex align-items-stretch">
-                  <div class="col-md-8">
+                  <div class="col-md-12">
                      <!-- title -->
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
                            Nama Tempat
                         </label>
-                        <input id="" value="" name="namatempat" type="text" class="form-control"
-                           placeholder="" value="{{ $t->namatempat }}"/>
+                        <input id="" name="NamaTempat" type="text" class="form-control"
+                           placeholder="" value="{{$tempats['NamaTempat']}}"/>
                      </div>
                      <!-- description -->
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
                            Deskripsi
                         </label>
-                        <textarea id="" name="deskripsitempat" placeholder="" class="form-control " value="{{ $t->deskripsitempat }}"
-                         style="width: 100"></textarea>
+                        <textarea id="" name="DeskripsiTempat" placeholder="" class="form-control "
+                         style="width: 100">{{$tempats['DeskripsiTempat']}}</textarea>
                      </div>
                      <!-- description -->
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
                            kota
                         </label>
-                        <textarea id="" name="kota" placeholder="" class="form-control " value="{{ $t->kota }}
+                        <textarea id="" name="Kota" placeholder="" class="form-control " value="{{$tempats['Kota']}}"
                            rows="3"></textarea>
                      </div>
                      <!-- content -->
@@ -40,22 +40,28 @@
                         <label for="" class="font-weight-bold">
                            kecamatan
                         </label>
-                        <textarea id="inputlangkah" name="langkahLangkah" placeholder="" class="form-control " value="{{ $t->kecamatan }}
+                        <textarea id="inputlangkah" name="Kecamatan" placeholder="" class="form-control " value="{{$tempats['Kecamatan']}}"
                            rows="20"></textarea>
                      </div>
-                  </div>
-                  <div class="col-md-4">
-                     <!-- catgeory -->
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
-                           Gambar Tempat
+                            Alamat
                         </label>
-                        <div class="form-control overflow-auto" style="height: 400px">
-
-                        </div>
+                        <input id="" value="{{$tempats['LokasiTempat']}}" name="LokasiTempat" type="text" class="form-control"
+                           placeholder="" />
+                     </div>
+                     <div class="form-group">
+                        <label for="" class="font-weight-bold">
+                           Kategori
+                        </label>
+                        <select id="" name="JenisKategori" class="custom-select">
+                           <option value="Pasar">Pasar</option>
+                           <option value="Toko">Toko</option>
+                           <option value="Supermarket">Supermarket</option>
+                        </select>
                      </div>
                   </div>
-               </div>
+
                            <a class="btn btn-warning px-4" href="{{ config('app.url')}}/listtempatadmin">Kembali</a>
                            <button type="submit" class="btn btn-primary px-4">
                               Simpan
@@ -64,11 +70,9 @@
                      </div>
                   </div>
                </div>
-
             </div>
          </div>
       </form>
-      @endforeach
    </div>
  </div>
 @endsection

@@ -1,85 +1,68 @@
 @extends('layouts.receppe')
-@section('title','List Resep')
+@section('title','Tambah Tempat')
 
 @section('content')
 <div class="row">
    <div class="col-md-12">
-    <form method="POST" action="/tambahtempat/store" >
+    <form method="POST" action="/tambahtempat/store" enctype="multipart/form-data">
         {{ csrf_field() }}
          <div class="card mr-5 ml-5" >
             <div class="card-body">
                <div class="row d-flex align-items-stretch">
-                  <div class="col-md-8">
-                     <!-- title -->
+                  <div class="col-md-12">
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
                            Nama Tempat
                         </label>
-                        <input id="" value="" name="namatempat" type="text" class="form-control"
+                        <input id="" value="" name="NamaTempat" type="text" class="form-control"
                            placeholder="" />
                      </div>
-                     <!-- description -->
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
                            Deskripsi
                         </label>
-                        <textarea id="" name="deskripsitempat" placeholder="" class="form-control "
+                        <textarea id="" name="DeskripsiTempat" placeholder="" class="form-control "
                          style="width: 100"></textarea>
                      </div>
-                     <!-- description -->
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
                            Kota
                         </label>
-                        <input id="" value="" name="kota" type="text" class="form-control"
+                        <input id="" value="" name="Kota" type="text" class="form-control"
                            placeholder="" />
                      </div>
-                     <!-- content -->
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
                             Kecamatan
                         </label>
-                        <input id="" value="" name="kecamatan" type="text" class="form-control"
+                        <input id="" value="" name="Kecamatan" type="text" class="form-control"
                            placeholder="" />
                      </div>
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
-                            Lokasi
+                            Alamat
                         </label>
-                        <input id="" value="" name="lokasi" type="text" class="form-control"
-                           placeholder="" />
-                     </div>
-                     <div class="form-group">
-                        <label for="" class="font-weight-bold">
-                            Link Lokasi
-                        </label>
-                        <input id="" value="" name="linklokasi" type="text" class="form-control"
+                        <input id="" value="" name="LokasiTempat" type="text" class="form-control"
                            placeholder="" />
                      </div>
                      <div class="row">
                         <div class="col-md-12">
-                           <!-- tag -->
                            <div class="form-group">
                               <label for="" class="font-weight-bold">
                                  Kategori
                               </label>
-                              <select id="" name="jenisKategori" class="custom-select">
-                                 <option value="pagi">Pasar</option>
-                                 <option value="siang">Toko</option>
-                                 <option value="malam">Supermarket</option>
+                              <select id="" name="JenisKategori" class="custom-select">
+                                 <option value="Pasar">Pasar</option>
+                                 <option value="Toko">Toko</option>
+                                 <option value="Supermarket">Supermarket</option>
                               </select>
                            </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-4">
-                     <!-- catgeory -->
-                     <div class="form-group">
-                        <label for="" class="font-weight-bold">
-                           Gambar Tempat
-                        </label>
-                        <div class="form-control overflow-auto" style="height: 400px">
-
+                           <div class="input-group">
+                            <div class="custom-file">
+                               <label for="">Pilih Gambar </label>
+                               <input type="file" id="gambar" name="FotoTempat" style="display:block;" />
+                            </div>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -95,7 +78,6 @@
                      </div>
                   </div>
                </div>
-
             </div>
          </div>
       </form>
