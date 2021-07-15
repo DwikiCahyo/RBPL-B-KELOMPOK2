@@ -15,13 +15,15 @@
             <img class="card-img-top" src="{{ asset('paper') }}/image/{{ $reseps->FotoResep }}" style="height: 100%" >
             <br>
             <br>
+
             <h5  ><b>Deskripsi</b></h5>
-                <p>{!!$reseps->DeskripsiResep!!}</p>
+            <p>{!!$reseps->DeskripsiResep!!}</p>
+
             <h5 ><b>Bahan</b></h5>
-            <ul>{!!$reseps->Bahan!!}</ul>
+            <ul>{!!nl2br(e($reseps->Bahan))!!}</ul>
 
             <h5 ><b>Langkah-Langkah</b></h5>
-            <ul>{!!$reseps->LangkahLangkah!!}</ul>
+            <ul>{!!nl2br(e($reseps->LangkahLangkah))!!}</ul>
 
             <a href="{{ route('EditResep',$reseps->id) }}">
               <button class="btn btn-warning btn-sm" type="button">Edit</button>
