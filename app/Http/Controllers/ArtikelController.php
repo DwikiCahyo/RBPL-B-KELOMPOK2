@@ -62,4 +62,12 @@ class ArtikelController extends Controller
 
     return redirect('listartikeladmin');
     }
+
+    public function hapusArtikel($id)
+    {
+     $artikels= Artikel::find($id);
+     $artikels->delete();
+
+     return redirect('listartikeladmin');
+    }
 }

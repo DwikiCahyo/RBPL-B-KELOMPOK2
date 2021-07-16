@@ -31,6 +31,7 @@ Route::get('detailTempat/{id}', [App\Http\Controllers\TempatController::class, '
 Route::get('detailTempatpengguna/{id}', [App\Http\Controllers\TempatController::class, 'viewdetailtempatpengguna'])->name('detailTempatPengguna');
 Route::get('editTempat/{id}', [App\Http\Controllers\TempatController:: class,'viewedittempat'])->name('editTempat');
 Route::patch('editTempat/updatetempat/{id}', [App\Http\Controllers\TempatController::class, 'update'])->name('updateTempat');
+Route::delete('hapustempat/{id}', [App\Http\Controllers\TempatController::class, 'hapusTempat'])->name('hapusTempat');
 
 //ARTIKEL ROUTE
 Route::get('/listartikeladmin', 'App\Http\Controllers\ArtikelController@viewlistartikeladmin')->name('listartikeladmin');
@@ -41,6 +42,7 @@ Route::get('detailartikeladmin/{id}', [App\Http\Controllers\ArtikelController::c
 Route::get('detailartikelpengguna/{id}', [App\Http\Controllers\ArtikelController::class, 'viewdetailartikelpengguna'])->name('detailArtikelPengguna');
 Route::get('editartikel/{id}', [App\Http\Controllers\ArtikelController:: class,'vieweditartikel'])->name('editArtikel');
 Route::patch('editartikel/updateartikel/{id}', [App\Http\Controllers\ArtikelController::class, 'update'])->name('updateArtikel');
+Route::delete('hapusartikel/{id}', [App\Http\Controllers\ArtikelController::class, 'hapusArtikel'])->name('hapusArtikel');
 
 
 Auth::routes();

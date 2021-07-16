@@ -11,13 +11,17 @@
             <img src="{{ asset('paper') }}/image/{{ $artikels->FotoArtikel }}" style="margin-left: auto; margin-right: auto; width: 50%; display: block;">
             <br>
             <br>
-                <p>{{$artikels->DeskripsiArtikel}}</p>
+            <p>{{$artikels->DeskripsiArtikel}}</p>
             <a href="{{ route('editArtikel',$artikels->id) }}">
-                <button class="btn btn-warning btn-sm" type="button">Edit</button>
+                <button class="btn btn-warning btn-lg" type="button">Edit</button>
             </a>
-            <a href="">
-              <button class="btn btn-warning btn-sm" type="button">Hapus</button>
-          </a>
+            <form action="{{ route('hapusArtikel',$artikels->id) }}" class="d-inline" onsubmit="return confirm('Apakah anda ingin menghapus Resep')" method ="POST">
+                @method('delete')
+                @csrf
+                <button class="btn btn-danger btn-lg ">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </form>
         </div>
       </div>
     </div>

@@ -71,4 +71,11 @@ class TempatController extends Controller
 
     return redirect('listtempatadmin');
     }
+    public function hapusTempat($id)
+    {
+     $tempats= Tempat::find($id);
+     $tempats->delete();
+
+     return redirect('listtempatadmin');
+    }
 }

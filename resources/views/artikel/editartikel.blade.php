@@ -24,7 +24,7 @@
                         <label for="" class="font-weight-bold">
                            Deskripsi
                         </label>
-                        <textarea id="" name="DeskripsiTempat" placeholder="" class="form-control "
+                        <textarea id="" name="DeskripsiArtikel" placeholder="" class="form-control "
                          style="width: 100">{{$artikels['DeskripsiArtikel']}}</textarea>
                      </div>
                   </div>

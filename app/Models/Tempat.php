@@ -15,7 +15,6 @@ class Tempat extends Model
         'Kota',
         'Kecamatan',
         'LokasiTempat',
-        'LinkLokasi',
         'JenisKategori',
         'FotoTempat',
 

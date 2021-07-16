@@ -22,7 +22,6 @@ class CreateTempatsTable extends Migration
             $table->string('Kota',50);
             $table->string('Kecamatan',50);
             $table->string('LokasiTempat',255);
-            $table->string('LinkLokasi',50);
             $table->string('JenisKategori',50);
             $table->binary('FotoTempat');
 
