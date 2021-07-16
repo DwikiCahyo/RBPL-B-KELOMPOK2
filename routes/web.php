@@ -20,6 +20,8 @@ Route::get('detailresep/editResep/{id}', [App\Http\Controllers\ResepController::
 Route::patch('detailresep/editresep/updateresep/{id}', [App\Http\Controllers\ResepController::class, 'updateResep'])->name('updateResep');
 //hapus
 Route::delete('detailresep/hapusresep/{id}', [App\Http\Controllers\ResepController::class, 'hapusresep'])->name('hapusResep');
+
+
 //TEMPAT ROUTE
 Route::get('/listtempatadmin', 'App\Http\Controllers\TempatController@viewlisttempatadmin')->name('listtempatadmin');
 Route::get('/listtempatpengguna', 'App\Http\Controllers\TempatController@viewlisttempatpengguna')->name('listtempatpengguna');
@@ -29,6 +31,7 @@ Route::get('detailTempat/{id}', [App\Http\Controllers\TempatController::class, '
 Route::get('detailTempatpengguna/{id}', [App\Http\Controllers\TempatController::class, 'viewdetailtempatpengguna'])->name('detailTempatPengguna');
 Route::get('editTempat/{id}', [App\Http\Controllers\TempatController:: class,'viewedittempat'])->name('editTempat');
 Route::patch('editTempat/updatetempat/{id}', [App\Http\Controllers\TempatController::class, 'update'])->name('updateTempat');
+
 //ARTIKEL ROUTE
 Route::get('/listartikeladmin', 'App\Http\Controllers\ArtikelController@viewlistartikeladmin')->name('listartikeladmin');
 Route::get('/listartikelpengguna', 'App\Http\Controllers\ArtikelController@viewlistartikelpengguna')->name('listartikelpengguna');
