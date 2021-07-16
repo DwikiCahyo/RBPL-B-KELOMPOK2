@@ -24,14 +24,19 @@
 
             <h5 ><b>Langkah-Langkah</b></h5>
             <ul>{!!nl2br(e($reseps->LangkahLangkah))!!}</ul>
-
+            <!--EDIT-->
             <a href="{{ route('EditResep',$reseps->id) }}">
-              <button class="btn btn-warning btn-sm" type="button">Edit</button>
+              <button class="btn btn-warning btn-lg" type="button">Edit</button>
           </a>
-          <a href="{{ route('hapusResep',$reseps->id) }}">
-            <button class="btn btn-warning btn-sm" type="button">Hapus</button>
-        </a>
+           <!--Hapus-->
+           <form action="{{ route('hapusResep',$reseps->id) }}" class="d-inline" onsubmit="return confirm('Apakah anda ingin menghapus Resep')" method ="POST">
+            @method('delete')
+            @csrf
+            <button class="btn btn-danger btn-lg ">
+                <i class="fa fa-trash"></i>
+            </button>
 
+        </form>
           </div>
         </div>
       </div>

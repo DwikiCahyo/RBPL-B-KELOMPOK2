@@ -4,11 +4,11 @@
 
 @section('content')
 <div class="content mt-5 mr-5 ml-5">
-    <div class="row">
+    <div class="row mt-2">
         @foreach ($reseps as $r)
 
 
-        <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="col-lg-3 col-md-6 col-sm-6  d-flex align-items-stretch">
             <div class="card Resep">
                 <img class="card-img-top" src="{{ asset('paper') }}/image/{{ $r->FotoResep }}" width="100px">
                     <div class="card-body">
