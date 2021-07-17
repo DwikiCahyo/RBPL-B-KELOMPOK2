@@ -27,9 +27,12 @@
                     <td>{{$tempats->LokasiTempat}}</td>
                 </tr>
             </table>
+            @if(Auth::user()->role == "admin")
             <a href="{{ route('editTempat',$tempats->id) }}">
                 <button class="btn btn-warning btn-lg" type="button">Edit</button>
             </a>
+            @endif
+            @if(Auth::user()->role == "admin")
             <form action="{{ route('hapusTempat',$tempats->id) }}" class="d-inline" onsubmit="return confirm('Apakah anda ingin menghapus Resep')" method ="POST">
                 @method('delete')
                 @csrf
@@ -37,6 +40,7 @@
                     <i class="fa fa-trash"></i>
                 </button>
             </form>
+            @endif
         </div>
       </div>
     </div>

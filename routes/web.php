@@ -9,7 +9,8 @@ Route::get('/', function () {
 });
 
 //RESEP
-Route::get('/listresep', 'App\Http\Controllers\ResepController@viewlistresep');
+Route::get('/listresep', 'App\Http\Controllers\ResepController@viewlistresep')->middleware('auth')->middleware('CheckRole:pengguna');
+
 Route::post('/tambahresep/store','App\Http\Controllers\ResepController@store');
 Route::get('/tambahresep', 'App\Http\Controllers\ResepController@tambahresep');
 //detail
@@ -27,8 +28,7 @@ Route::get('/listtempatadmin', 'App\Http\Controllers\TempatController@viewlistte
 Route::get('/listtempatpengguna', 'App\Http\Controllers\TempatController@viewlisttempatpengguna')->name('listtempatpengguna');
 Route::get('/tambahtempat', 'App\Http\Controllers\TempatController@tambahtempat');
 Route::post('/tambahtempat/store','App\Http\Controllers\TempatController@store');
-Route::get('detailTempat/{id}', [App\Http\Controllers\TempatController::class, 'viewdetailtempat'])->name('detailTempat');
-Route::get('detailTempatpengguna/{id}', [App\Http\Controllers\TempatController::class, 'viewdetailtempatpengguna'])->name('detailTempatPengguna');
+Route::get('detailTempat/{id}', [App\Http\Controllers\TempatController::class, 'viewdetailtempat'])->name('detailTempat')->middleware('auth')->middleware('CheckRole:pengguna,admin');
 Route::get('editTempat/{id}', [App\Http\Controllers\TempatController:: class,'viewedittempat'])->name('editTempat');
 Route::patch('editTempat/updatetempat/{id}', [App\Http\Controllers\TempatController::class, 'update'])->name('updateTempat');
 Route::delete('hapustempat/{id}', [App\Http\Controllers\TempatController::class, 'hapusTempat'])->name('hapusTempat');
