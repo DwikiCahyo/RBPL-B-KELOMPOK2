@@ -10,14 +10,9 @@ use App\Models\Comment;
 class ArtikelController extends Controller
 {
     //Menampilkan view list artikel admin
-    public function viewlistartikeladmin(){
+    public function viewlistartikel(){
         $artikel = Artikel::all();
-        return view ('artikel.listartikeladmin',['artikels'=>$artikel]);
-    }
-    //Menampilkan view list artikel pengguna
-    public function viewlistartikelpengguna(){
-        $artikel = Artikel::all();
-        return view ('artikel.listartikelpengguna',['artikels'=>$artikel]);
+        return view ('artikel.listartikel',['artikels'=>$artikel]);
     }
      //Menampilkan view tambah artikel
     public function tambahartikel(){
@@ -38,14 +33,11 @@ class ArtikelController extends Controller
             'JudulArtikel'=>$request->JudulArtikel,
             'DeskripsiArtikel' =>$request->DeskripsiArtikel,
           ]);
-        return redirect('listartikeladmin');
+        return redirect('listartikel');
     }
     //menampilkan view detail artikel
     public function viewdetailartikel($id){
-        return view('artikel.detailartikeladmin', ['artikels' => Artikel::find($id)]);
-    }
-    public function viewdetailartikelpengguna($id){
-        return view('artikel.detailartikelpengguna', ['artikels' => Artikel::find($id)]);
+        return view('artikel.detailartikel', ['artikels' => Artikel::find($id)]);
     }
     //menampilkan view edit artikel
     public function vieweditartikel($id){
@@ -60,7 +52,7 @@ class ArtikelController extends Controller
 
     $artikels->save();
 
-    return redirect('listartikeladmin');
+    return redirect('listartikel');
     }
 
     public function hapusArtikel($id)
@@ -68,6 +60,6 @@ class ArtikelController extends Controller
      $artikels= Artikel::find($id);
      $artikels->delete();
 
-     return redirect('listartikeladmin');
+     return redirect('listartikel');
     }
 }

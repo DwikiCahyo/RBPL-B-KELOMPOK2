@@ -37,7 +37,7 @@
                   <div class="row mr-5 ml-5">
                      <div class="col-md-12">
                         <div class="float-right">
-                           <a class="btn btn-warning px-4" href="{{ config('app.url')}}/listartikeladmin">Kembali</a>
+                           <a class="btn btn-warning px-4" href="{{ config('app.url')}}/listartikel">Kembali</a>
                            <button type="submit" class="btn btn-primary px-4">
                               Simpan
                            </button>

@@ -10,14 +10,9 @@ use App\Models\Comment;
 class TempatController extends Controller
 {
     //Menampilkan view list tempat admin
-    public function viewlisttempatadmin(){
+    public function viewlisttempat(){
         $tempat = Tempat::all();
-        return view ('tempat.listtempatadmin',['tempats'=>$tempat]);
-     }
-    //Menampilkan view list tempat pengguna
-    public function viewlisttempatpengguna(){
-        $tempat = Tempat::all();
-        return view ('tempat.listtempatpengguna',['tempats'=>$tempat]);
+        return view ('tempat.listtempat',['tempats'=>$tempat]);
      }
      //Menampilkan view tambah tempat
     public function tambahtempat(){
@@ -42,14 +37,11 @@ class TempatController extends Controller
             'LokasiTempat'=> $request->LokasiTempat,
             'JenisKategori'=> $request->JenisKategori,
           ]);
-        return redirect('listtempatadmin');
+        return redirect('listtempat');
     }
     //menampilkan view detail tempat
     public function viewdetailtempat($id){
         return view('tempat.detailtempat', ['tempats' => Tempat::find($id)]);
-    }
-    public function viewdetailtempatpengguna($id){
-        return view('tempat.detailtempatpengguna', ['tempats' => Tempat::find($id)]);
     }
     //menampilkan view edit tempat
     public function viewedittempat($id){
@@ -69,13 +61,13 @@ class TempatController extends Controller
 
     $tempats->save();
 
-    return redirect('listtempatadmin');
+    return redirect('listtempat');
     }
     public function hapusTempat($id)
     {
      $tempats= Tempat::find($id);
      $tempats->delete();
 
-     return redirect('listtempatadmin');
+     return redirect('listtempat');
     }
 }

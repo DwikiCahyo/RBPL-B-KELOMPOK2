@@ -12,11 +12,11 @@ Route::get('/', function () {
 Route::get('/listresep', 'App\Http\Controllers\ResepController@viewlistresep')->middleware('auth')->middleware('CheckRole:pengguna');
 
 Route::post('/tambahresep/store','App\Http\Controllers\ResepController@store');
-Route::get('/tambahresep', 'App\Http\Controllers\ResepController@tambahresep');
+Route::get('/tambahresep', 'App\Http\Controllers\ResepController@tambahresep')->middleware('auth')->middleware('CheckRole:pengguna');
 //detail
-Route::get('detailResep/{id}', [App\Http\Controllers\ResepController::class, 'detailresep'])->name('detailResep');
+Route::get('detailResep/{id}', [App\Http\Controllers\ResepController::class, 'detailresep'])->name('detailResep')->middleware('auth')->middleware('CheckRole:pengguna');
 //edit
-Route::get('detailresep/editResep/{id}', [App\Http\Controllers\ResepController:: class,'HalamanEditResep'])->name('EditResep');
+Route::get('detailresep/editResep/{id}', [App\Http\Controllers\ResepController:: class,'HalamanEditResep'])->name('EditResep')->middleware('auth')->middleware('CheckRole:pengguna');
 //update dari edit
 Route::patch('detailresep/editresep/updateresep/{id}', [App\Http\Controllers\ResepController::class, 'updateResep'])->name('updateResep');
 //hapus
@@ -24,23 +24,20 @@ Route::delete('detailresep/hapusresep/{id}', [App\Http\Controllers\ResepControll
 
 
 //TEMPAT ROUTE
-Route::get('/listtempatadmin', 'App\Http\Controllers\TempatController@viewlisttempatadmin')->name('listtempatadmin');
-Route::get('/listtempatpengguna', 'App\Http\Controllers\TempatController@viewlisttempatpengguna')->name('listtempatpengguna');
-Route::get('/tambahtempat', 'App\Http\Controllers\TempatController@tambahtempat');
+Route::get('/listtempat', 'App\Http\Controllers\TempatController@viewlisttempat')->name('listtempatadmin');
+Route::get('/tambahtempat', 'App\Http\Controllers\TempatController@tambahtempat')->middleware('auth')->middleware('CheckRole:admin');
 Route::post('/tambahtempat/store','App\Http\Controllers\TempatController@store');
-Route::get('detailTempat/{id}', [App\Http\Controllers\TempatController::class, 'viewdetailtempat'])->name('detailTempat')->middleware('auth')->middleware('CheckRole:pengguna,admin');
-Route::get('editTempat/{id}', [App\Http\Controllers\TempatController:: class,'viewedittempat'])->name('editTempat');
+Route::get('detailTempat/{id}', [App\Http\Controllers\TempatController::class, 'viewdetailtempat'])->name('detailTempat');
+Route::get('editTempat/{id}', [App\Http\Controllers\TempatController::class,'viewedittempat'])->name('editTempat')->middleware('auth')->middleware('CheckRole:admin');
 Route::patch('editTempat/updatetempat/{id}', [App\Http\Controllers\TempatController::class, 'update'])->name('updateTempat');
 Route::delete('hapustempat/{id}', [App\Http\Controllers\TempatController::class, 'hapusTempat'])->name('hapusTempat');
 
 //ARTIKEL ROUTE
-Route::get('/listartikeladmin', 'App\Http\Controllers\ArtikelController@viewlistartikeladmin')->name('listartikeladmin');
-Route::get('/listartikelpengguna', 'App\Http\Controllers\ArtikelController@viewlistartikelpengguna')->name('listartikelpengguna');
-Route::get('/tambahartikel', 'App\Http\Controllers\ArtikelController@tambahartikel');
+Route::get('/listartikel', 'App\Http\Controllers\ArtikelController@viewlistartikel')->name('listartikeladmin');
+Route::get('/tambahartikel', 'App\Http\Controllers\ArtikelController@tambahartikel')->middleware('auth')->middleware('CheckRole:admin');
 Route::post('/tambahartikel/store','App\Http\Controllers\ArtikelController@store');
-Route::get('detailartikeladmin/{id}', [App\Http\Controllers\ArtikelController::class, 'viewdetailartikel'])->name('detailArtikel');
-Route::get('detailartikelpengguna/{id}', [App\Http\Controllers\ArtikelController::class, 'viewdetailartikelpengguna'])->name('detailArtikelPengguna');
-Route::get('editartikel/{id}', [App\Http\Controllers\ArtikelController:: class,'vieweditartikel'])->name('editArtikel');
+Route::get('detailartikel/{id}', [App\Http\Controllers\ArtikelController::class, 'viewdetailartikel'])->name('detailArtikel');
+Route::get('editartikel/{id}', [App\Http\Controllers\ArtikelController:: class,'vieweditartikel'])->name('editArtikel')->middleware('auth')->middleware('CheckRole:admin');
 Route::patch('editartikel/updateartikel/{id}', [App\Http\Controllers\ArtikelController::class, 'update'])->name('updateArtikel');
 Route::delete('hapusartikel/{id}', [App\Http\Controllers\ArtikelController::class, 'hapusArtikel'])->name('hapusArtikel');
 

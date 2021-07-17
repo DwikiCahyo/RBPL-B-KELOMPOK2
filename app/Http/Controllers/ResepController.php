@@ -13,7 +13,7 @@ class ResepController extends Controller
 
     public function viewlistresep(){
        $resep = Resep::all();
-       return view ('pages.viewlistresep',['reseps'=>$resep]);
+       return view ('resep.listresep',['reseps'=>$resep]);
 
     }
 
@@ -64,7 +64,7 @@ class ResepController extends Controller
     }
     public function detailresep($id)
     {
-        return view('resep.reseppengguna', ['reseps' => Resep::findOrFail($id)]);
+        return view('resep.detailresep', ['reseps' => Resep::findOrFail($id)]);
     }
 
     public function HalamanEditResep($id)

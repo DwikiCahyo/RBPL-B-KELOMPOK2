@@ -62,7 +62,7 @@
                      </div>
                   </div>
 
-                           <a class="btn btn-warning px-4" href="{{ config('app.url')}}/listtempatadmin">Kembali</a>
+                           <a class="btn btn-warning px-4" href="{{ config('app.url')}}/listtempat">Kembali</a>
                            <button type="submit" class="btn btn-primary px-4">
                               Simpan
                            </button>

@@ -22,7 +22,9 @@
         </div>
     </div>
     <div class="col-md-2"></div>
+    @if(Auth::user()->role == "admin")
     <div class="text-right fixed-bottom mt-5 mr-5 ml-5">
     <a href="/tambahtempat"> <i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i></a>
-</div>
+    </div>
+    @endif
 @endsection

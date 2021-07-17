@@ -28,8 +28,7 @@
                          style="width: 100">{{$artikels['DeskripsiArtikel']}}</textarea>
                      </div>
                   </div>
-
-                           <a class="btn btn-warning px-4" href="{{ config('app.url')}}/listartikeladmin">Kembali</a>
+                           <a class="btn btn-warning px-4" href="{{ config('app.url')}}/listartikel">Kembali</a>
                            <button type="submit" class="btn btn-primary px-4">
                               Simpan
                            </button>

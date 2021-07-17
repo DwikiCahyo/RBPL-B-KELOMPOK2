@@ -29,7 +29,7 @@ class CheckRole
         }
     }
 
-    return redirect('listtempatadmin');
+    return abort(404);
 
     }
 }
