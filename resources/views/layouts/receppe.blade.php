@@ -127,10 +127,10 @@
                 <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('My profile') }}</a>
             </div>
           </div>
-          <form class="form-inline my-2 my-lg-0">
+          {{-- <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-warning" type="submit">Search</button>
-          </form>
+          </form> --}}
         </div>
     </nav>
 

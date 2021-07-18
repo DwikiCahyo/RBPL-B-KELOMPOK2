@@ -12,7 +12,7 @@
             <div class="card Resep">
                 <img class="card-img-top" src="{{ asset('paper') }}/image/{{ $r->FotoResep }}" width="100px">
                     <div class="card-body">
-                      <h4 class="card-title">{{$r->NamaResep}}</h4>
+                      <h4 class="card-title"><b>{{$r->NamaResep}}</b></h4>
                       <p class="card-text">{{$r->DeskripsiResep}}</p>
                       <a href="{{ route('detailResep',$r->id) }}" class="btn btn-primary">Lihat selengkapnya</a>
                     </div>
