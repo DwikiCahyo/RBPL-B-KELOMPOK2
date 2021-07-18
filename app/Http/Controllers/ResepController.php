@@ -22,6 +22,14 @@ class ResepController extends Controller
         return view('resep.tambahresep');
     }
     public function store(Request $request){
+
+        //Validate
+        $request->validate([
+            'namaresep'=>'required|min:5|max:200',
+            'deskripsi'=>'required|max:500',
+            'bahan'=>'required|max:5000',
+            'langkahLangkah'=>'required|max:5000',
+        ]);
         // $resep = new Resep([
         //     'NamaResep' => $request->get('namaresep'),
         //     'DeskripsiResep' =>$request->get('deskripsi'),
@@ -82,6 +90,8 @@ class ResepController extends Controller
     $resep->DeskripsiResep=$request->DeskripsiResep;
     $resep->Bahan=$request->Bahan;
     $resep->LangkahLangkah=$request->LangkahLangkah;
+    $resep->Rasa=$request->Rasa;
+    $resep->WaktuMakan=$request->WaktuMakan;
 
     $resep->save();
 

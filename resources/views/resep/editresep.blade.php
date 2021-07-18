@@ -48,14 +48,14 @@
                      </div>
                   </div>
 
-               {{-- <div class="row">
+                <div class="row">
                   <div class="col-md-12">
                      <!-- tag -->
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
                            Waktu Makan
                         </label>
-                        <select id="" name="waktuMakan" class="custom-select">
+                        <select id="" name="WaktuMakan" class="custom-select">
                            <option value="pagi">Pagi</option>
                            <option value="siang">Siang</option>
                            <option value="malam">Malam</option>
@@ -69,7 +69,7 @@
                         <label for="" class="font-weight-bold">
                            Rasa
                         </label>
-                        <select id="" name="rasa" class="custom-select">
+                        <select id="" name="Rasa" class="custom-select">
 
                            <option value="manis">Manis</option>
                            <option value="pedas">Pedas</option>
@@ -77,13 +77,13 @@
                         </select>
                      </div>
                   </div>
-                <div class="input-group">
+                {{-- <div class="input-group">
                      <div class="custom-file">
                         <label for="">Pilih Gambar </label>
                         <input type="file" id="gambar" name="FotoResep" style="display:block;" />
 
-                     </div> --}}
-                  </div>
+                     </div>
+                  </div> --}}
 
 
 
