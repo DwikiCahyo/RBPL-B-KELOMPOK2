@@ -9,18 +9,20 @@ Route::get('/', function () {
 });
 
 //RESEP
-Route::get('/listresep', 'App\Http\Controllers\ResepController@viewlistresep')->middleware('auth')->middleware('CheckRole:pengguna');
-
+Route::get('/listresep', 'App\Http\Controllers\ResepController@viewlistresep');
+//Tambah resep
 Route::post('/tambahresep/store','App\Http\Controllers\ResepController@store');
-Route::get('/tambahresep', 'App\Http\Controllers\ResepController@tambahresep')->middleware('auth')->middleware('CheckRole:pengguna');
-//detail
-Route::get('detailResep/{id}', [App\Http\Controllers\ResepController::class, 'detailresep'])->name('detailResep')->middleware('auth')->middleware('CheckRole:pengguna');
-//edit
+Route::get('/tambahresep', 'App\Http\Controllers\ResepController@tambahresep')->middleware('auth')->middleware('CheckRole:pengguna,admin');
+//detail resep
+Route::get('detailResep/{id}', [App\Http\Controllers\ResepController::class, 'detailresep'])->name('detailResep');
+//edit resep
 Route::get('detailresep/editResep/{id}', [App\Http\Controllers\ResepController:: class,'HalamanEditResep'])->name('EditResep')->middleware('auth')->middleware('CheckRole:pengguna');
 //update dari edit
-Route::patch('detailresep/editresep/updateresep/{id}', [App\Http\Controllers\ResepController::class, 'updateResep'])->name('updateResep');
-//hapus
-Route::delete('detailresep/hapusresep/{id}', [App\Http\Controllers\ResepController::class, 'hapusresep'])->name('hapusResep');
+Route::patch('detailresep/editresep/updateresep/{id}', [App\Http\Controllers\ResepController::class, 'updateResep'])->name('updateResep')->middleware('auth')->middleware('CheckRole:pengguna');
+//hapus resep
+Route::delete('detailresep/hapusresep/{id}', [App\Http\Controllers\ResepController::class, 'hapusresep'])->name('hapusResep')->middleware('auth')->middleware('CheckRole:pengguna');
+//search resep
+Route::get('listresep/searchResep', [App\Http\Controllers\ResepController::class, 'searchResep'])->name('seacrhResep');
 
 
 //TEMPAT ROUTE

@@ -92,11 +92,11 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            @if(Auth::user()->role == "pengguna")
+
             <li class="nav-item">
               <a class="nav-link" href="/listresep">Resep <span class="sr-only">(current)</span></a>
             </li>
-            @endif
+
             <li class="nav-item">
               <a class="nav-link" href="/listtempat">Tempat</a>
             </li>

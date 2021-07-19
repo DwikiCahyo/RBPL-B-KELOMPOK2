@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Resep;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ResepController extends Controller
 {
@@ -108,6 +109,21 @@ class ResepController extends Controller
    $resep->delete();
 
    return redirect('listresep');
+  }
+
+  public function searchResep(Request $request){
+
+    $search = $request->search;
+
+    $reseps = DB::table('reseps')
+    ->where('NamaResep','like',"%".$search."%")
+        ->orWhere('Rasa', 'like', '%' . $search . '%')
+        ->orWhere('WaktuMakan', 'like', '%' . $search . '%')
+		->paginate();
+
+        return view('resep.listresep',['reseps' => $reseps]);
+
+
   }
 
 }

@@ -4,7 +4,16 @@
 
 @section('content')
 <div class="content mt-5 mr-5 ml-5">
-    <div class="row mt-2">
+    <!--Button Search-->
+    <div class="container">
+        <form class="form" action="{{ route('seacrhResep') }}" method = "GET" >
+            <input class="form-control mr-sm-2" name="search" type="search" placeholder="Cari Berdasarkan Nama Resep , Rasa Dan Waktu Makan" aria-label="Search" value="{{ old('search') }}">
+            <button class="btn btn-warning btn-sm" type="submit">Cari</button>
+          </form>
+        </div>
+
+        <!-- Content List-->
+    <div class="row mt-5">
         @foreach ($reseps as $r)
 
 
