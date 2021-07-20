@@ -92,14 +92,33 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
+            @if(Auth::guest())
+                <li class="nav-item">
+                 <a class="nav-link" href="/">Resep <span class="sr-only">(current)</span></a>
+                </li>
+            @elseif(Auth::user()->role == "pengguna")
+                <li class="nav-item">
+                <a class="nav-link" href="/listreseppengguna">Resep <span class="sr-only">(current)</span></a>
+                </li>
+            @elseif (Auth::user()->role == "admin")
+                <li class="nav-item">
+                <a class="nav-link" href="/listresepadmin">Resep <span class="sr-only">(current)</span></a>
+                </li>
+            @endif
+            @if(Auth::guest())
+                <li class="nav-item">
+                <a class="nav-link" href="/listtempat">Tempat</a>
+                </li>
+            @elseif(Auth::user()->role == "admin")
+                <li class="nav-item">
+                <a class="nav-link" href="/listtempatadmin">Tempat</a>
+                </li>
+            @elseif(Auth::user()->role == "pengguna")
+                <li class="nav-item">
+                <a class="nav-link" href="/listtempat">Tempat</a>
+                </li>
+            @endif
 
-            <li class="nav-item">
-              <a class="nav-link" href="/listresep">Resep <span class="sr-only">(current)</span></a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/listtempat">Tempat</a>
-            </li>
             {{-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown
@@ -111,20 +130,34 @@
                 <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </li> --}}
-            <li class="nav-item">
-              <a class="nav-link " href="/listartikel">Artikel</a>
-            </li>
+            @if(Auth::guest())
+                <li class="nav-item">
+                <a class="nav-link " href="/listartikel">Artikel</a>
+                </li>
+            @elseif(Auth::user()->role == "admin")
+                <li class="nav-item">
+                    <a class="nav-link " href="/listartikeladmin">Artikel</a>
+                </li>
+            @elseif(Auth::user()->role == "pengguna")
+                <li class="nav-item">
+                    <a class="nav-link " href="/listartikel">Artikel</a>
+                </li>
+            @endif
           </ul>
           <div class="btn-group mr-5">
             <button type="button" class="btn btn-success dropdown-toggle btn-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Profile
+              Setting
             </button>
             <div class="dropdown-menu">
                 <form class="dropdown-item" action="{{ route('logout') }}" id="formLogOut" method="POST" style="display: none;">
                     @csrf
                 </form>
+                @if(Auth::guest())
+                <a class="dropdown-item" href="{{ route('login') }}">{{ __('Log In') }}</a>
+                @else
                 <a class="dropdown-item" onclick="document.getElementById('formLogOut').submit();">{{ __('Log out') }}</a>
                 <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('My profile') }}</a>
+                @endif
             </div>
           </div>
           {{-- <form class="form-inline my-2 my-lg-0">

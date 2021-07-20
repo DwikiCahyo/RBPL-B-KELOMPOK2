@@ -14,6 +14,10 @@ class ArtikelController extends Controller
         $artikel = Artikel::all();
         return view ('artikel.listartikel',['artikels'=>$artikel]);
     }
+    public function viewlistartikeladmin(){
+        $artikel = Artikel::all();
+        return view ('artikel.listartikeladmin',['artikels'=>$artikel]);
+    }
      //Menampilkan view tambah artikel
     public function tambahartikel(){
         $this->middleware('auth');
@@ -33,11 +37,14 @@ class ArtikelController extends Controller
             'JudulArtikel'=>$request->JudulArtikel,
             'DeskripsiArtikel' =>$request->DeskripsiArtikel,
           ]);
-        return redirect('listartikel');
+        return redirect('listartikeladmin');
     }
     //menampilkan view detail artikel
     public function viewdetailartikel($id){
         return view('artikel.detailartikel', ['artikels' => Artikel::find($id)]);
+    }
+    public function viewdetailartikeladmin($id){
+        return view('artikel.detailartikeladmin', ['artikels' => Artikel::find($id)]);
     }
     //menampilkan view edit artikel
     public function vieweditartikel($id){
@@ -52,7 +59,7 @@ class ArtikelController extends Controller
 
     $artikels->save();
 
-    return redirect('listartikel');
+    return redirect('listartikeladmin');
     }
 
     public function hapusArtikel($id)
@@ -60,6 +67,6 @@ class ArtikelController extends Controller
      $artikels= Artikel::find($id);
      $artikels->delete();
 
-     return redirect('listartikel');
+     return redirect('listartikeladmin');
     }
 }

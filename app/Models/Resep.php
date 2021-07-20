@@ -9,7 +9,6 @@ class Resep extends Model
 {
     protected $fillabel = [
         'id',
-        'idPengguna',
         'NamaResep',
         'DeskripsiResep',
         'Bahan',
@@ -18,7 +17,7 @@ class Resep extends Model
         'Rasa',
         'WaktuMakan',
     ];
-    protected $fillable = ['id','idPengguna','NamaResep','DeskripsiResep','Bahan','LangkahLangkah','FotoResep','Rasa','WaktuMakan'];
+    protected $fillable = ['id','NamaResep','DeskripsiResep','Bahan','LangkahLangkah','FotoResep','Rasa','WaktuMakan'];
     protected $table = 'reseps';
     public $timestamps = false;
 }

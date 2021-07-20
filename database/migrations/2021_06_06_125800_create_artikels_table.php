@@ -15,8 +15,6 @@ class CreateArtikelsTable extends Migration
     {
         Schema::create('artikels', function (Blueprint $table) {
             $table->increments('id',10);
-            $table->unsignedInteger('idAdmin');
-            $table->foreign('idAdmin')->references('idAdmin')->on('akun_admins');
             $table->char('JudulArtikel',100);
             $table->string('DeskripsiArtikel',10000);
             $table->binary('FotoArtikel');

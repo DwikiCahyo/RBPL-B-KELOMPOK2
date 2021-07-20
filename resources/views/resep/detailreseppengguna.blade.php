@@ -15,7 +15,17 @@
             <img class="card-img-top" src="{{ asset('paper') }}/image/{{ $reseps->FotoResep }}" style='height: 100%; width: 100%; object-fit: contain'/>
             <br>
             <br>
-
+              <!--EDIT-->
+              <a href="{{ route('EditResep',$reseps->id) }}">
+                <button class="btn btn-warning btn-md" type="button">Edit</button>
+            </a>
+             <!--Hapus-->
+             <form action="{{ route('hapusResep',$reseps->id) }}" class="d-inline" onsubmit="return confirm('Apakah anda ingin menghapus Resep')" method ="POST">
+              @method('delete')
+              @csrf
+              <button class="btn btn-danger btn-md ">
+                  <i class="fa fa-trash"></i>
+              </button>
             <h5  ><b>Deskripsi</b></h5>
             <p>{!!$reseps->DeskripsiResep!!}</p>
             <hr>
@@ -40,7 +50,7 @@
           <div class="row mr-5 ml-1">
             <div class="col-md-12">
                <div class="float-left">
-                  <a class="btn btn-primary btn-md" href="{{ config('app.url')}}/">Kembali</a>
+                  <a class="btn btn-primary btn-md" href="{{ config('app.url')}}/listresep">Kembali</a>
                </div>
             </div>
          </div>

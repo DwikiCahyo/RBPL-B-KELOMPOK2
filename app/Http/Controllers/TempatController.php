@@ -14,6 +14,10 @@ class TempatController extends Controller
         $tempat = Tempat::all();
         return view ('tempat.listtempat',['tempats'=>$tempat]);
      }
+     public function viewlisttempatadmin(){
+        $tempat = Tempat::all();
+        return view ('tempat.listtempatadmin',['tempats'=>$tempat]);
+     }
      //Menampilkan view tambah tempat
     public function tambahtempat(){
         $this->middleware('auth');
@@ -37,11 +41,14 @@ class TempatController extends Controller
             'LokasiTempat'=> $request->LokasiTempat,
             'JenisKategori'=> $request->JenisKategori,
           ]);
-        return redirect('listtempat');
+        return redirect('listtempatadmin');
     }
     //menampilkan view detail tempat
     public function viewdetailtempat($id){
         return view('tempat.detailtempat', ['tempats' => Tempat::find($id)]);
+    }
+    public function viewdetailtempatadmin($id){
+        return view('tempat.detailtempatadmin', ['tempats' => Tempat::find($id)]);
     }
     //menampilkan view edit tempat
     public function viewedittempat($id){
@@ -61,13 +68,13 @@ class TempatController extends Controller
 
     $tempats->save();
 
-    return redirect('listtempat');
+    return redirect('listtempatadmin');
     }
     public function hapusTempat($id)
     {
      $tempats= Tempat::find($id);
      $tempats->delete();
 
-     return redirect('listtempat');
+     return redirect('listtempatadmin');
     }
 }

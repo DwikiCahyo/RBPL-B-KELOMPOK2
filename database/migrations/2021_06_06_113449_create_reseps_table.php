@@ -15,8 +15,6 @@ class CreateResepsTable extends Migration
     {
         Schema::create('reseps', function (Blueprint $table) {
             $table->increments('id',10);
-            $table->unsignedInteger('idPengguna');
-            $table->foreign('idPengguna')->references('idPengguna')->on('akun_penggunas');
             $table->char('NamaResep',200);
             $table->string('DeskripsiResep',500);
             $table->string('Bahan',5000);

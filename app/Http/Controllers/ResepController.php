@@ -9,9 +9,16 @@ use Illuminate\Support\Facades\DB;
 class ResepController extends Controller
 {
     //
+    public function viewlistresepadmin(){
+        $resep = Resep::all();
+        return view ('resep.listresepadmin',['reseps'=>$resep]);
 
+     }
+     public function viewlistreseppengguna(){
+        $resep = Resep::all();
+        return view ('resep.listreseppengguna',['reseps'=>$resep]);
 
-
+     }
     public function viewlistresep(){
        $resep = Resep::all();
        return view ('resep.listresep',['reseps'=>$resep]);
@@ -68,7 +75,7 @@ class ResepController extends Controller
 
           $request->session()->flash('alert-success', 'Resep Berhasil Ditambahkan!');
 
-          return redirect('listresep');
+          return redirect('/');
 
 
 
@@ -76,6 +83,11 @@ class ResepController extends Controller
     public function detailresep($id)
     {
         return view('resep.detailresep', ['reseps' => Resep::findOrFail($id)]);
+    }
+
+    public function detailreseppengguna($id)
+    {
+        return view('resep.detailreseppengguna', ['reseps' => Resep::findOrFail($id)]);
     }
 
     public function HalamanEditResep($id)
@@ -98,7 +110,7 @@ class ResepController extends Controller
 
     $resep->save();
 
-    return redirect('listresep');
+    return redirect('/');
 
   }
 
@@ -108,7 +120,7 @@ class ResepController extends Controller
    $resep= Resep::find($id);
    $resep->delete();
 
-   return redirect('listresep');
+   return redirect('/');
   }
 
   public function searchResep(Request $request){

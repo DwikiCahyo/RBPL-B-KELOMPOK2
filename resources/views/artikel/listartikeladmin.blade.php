@@ -15,7 +15,7 @@
                     <div class="col-md-8">
                     <h2>{{$a->JudulArtikel}}</h2>
                     <p>{{$a->DeskripsiArtikel}}</p>
-                    <a href="{{ route('detailArtikel',$a->id) }}" class="btn btn-primary">Lihat</a>
+                    <a href="{{ route('detailArtikelAdmin',$a->id) }}" class="btn btn-primary">Lihat</a>
                     </div>
                 </div>
             </div>
@@ -23,4 +23,7 @@
         </div>
     </div>
     <div class="col-md-2"></div>
+    <div class="text-right fixed-bottom mt-5 mr-5 ml-5">
+    <a href="/tambahartikel"> <i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i></a>
+    </div>
 @endsection

@@ -9,7 +9,6 @@ class Tempat extends Model
 {
     protected $fillabel = [
         'id',
-        'idAdmin',
         'NamaTempat',
         'DeskripsiTempat',
         'Kota',
@@ -19,7 +18,7 @@ class Tempat extends Model
         'FotoTempat',
 
     ];
-    protected $fillable = ['id','idAdmin','NamaTempat','DeskripsiTempat','Kota','Kecamatan','LokasiTempat','LinkLokasi','JenisKategori','FotoTempat'];
+    protected $fillable = ['id','NamaTempat','DeskripsiTempat','Kota','Kecamatan','LokasiTempat','LinkLokasi','JenisKategori','FotoTempat'];
     protected $table = 'tempats';
     public $timestamps = false;
 }

@@ -28,8 +28,4 @@
                  </div>
         </div>
         @endforeach
-      </div>
-        <div class="text-right fixed-bottom mt-5 mr-5 ml-5">
-        <a href="/tambahresep"> <i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i></a>
-        </div>
 @endsection

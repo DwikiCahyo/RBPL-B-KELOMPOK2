@@ -9,13 +9,12 @@ class Artikel extends Model
 {
     protected $fillabel = [
         'id',
-        'idAdmin',
         'JudulArtikel',
         'DeskripsiArtikel',
         'FotoArtikel',
 
     ];
-    protected $fillable = ['id','idAdmin','JudulArtikel','DeskripsiArtikel','FotoArtikel'];
+    protected $fillable = ['id','JudulArtikel','DeskripsiArtikel','FotoArtikel'];
     protected $table = 'artikels';
     public $timestamps = false;
 }

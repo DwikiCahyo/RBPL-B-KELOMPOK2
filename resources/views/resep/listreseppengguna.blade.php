@@ -23,7 +23,7 @@
                     <div class="card-body">
                       <h4 class="card-title"><b>{{$r->NamaResep}}</b></h4>
                       <p class="card-text">{{$r->DeskripsiResep}}</p>
-                      <a href="{{ route('detailResep',$r->id) }}" class="btn btn-primary">Lihat selengkapnya</a>
+                      <a href="{{ route('detailResepPengguna',$r->id) }}" class="btn btn-primary">Lihat selengkapnya</a>
                     </div>
                  </div>
         </div>

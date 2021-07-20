@@ -17,7 +17,7 @@
                     <p>{{ __('Dashboard') }}</p>
                 </a>
             </li>
-            <li class="{{ $elementActive == 'user' || $elementActive == 'profile' ? 'active' : '' }}">
+            {{-- <li class="{{ $elementActive == 'user' || $elementActive == 'profile' ? 'active' : '' }}">
                 <a data-toggle="collapse" aria-expanded="true" href="#laravelExamples">
                 <i class="fa fa-user-circle fa-4x" aria-hidden="true"></i>
                     <p>
@@ -41,7 +41,7 @@
                         </li>
                     </ul>
                 </div>
-            </li>
+            </li> --}}
             <li class="{{ $elementActive == 'icons' ? 'active' : '' }}">
                 <!-- <a href="{{ route('page.index', 'icons') }}"> -->
                     <a href="/listresep">

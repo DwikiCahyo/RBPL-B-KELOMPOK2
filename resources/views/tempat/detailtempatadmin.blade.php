@@ -27,6 +27,16 @@
                     <td>{{$tempats->LokasiTempat}}</td>
                 </tr>
             </table>
+            <a href="{{ route('editTempat',$tempats->id) }}">
+                <button class="btn btn-warning btn-lg" type="button">Edit</button>
+            </a>
+            <form action="{{ route('hapusTempat',$tempats->id) }}" class="d-inline" onsubmit="return confirm('Apakah anda ingin menghapus Resep')" method ="POST">
+                @method('delete')
+                @csrf
+                <button class="btn btn-danger btn-lg ">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </form>
         </div>
       </div>
     </div>

@@ -214,9 +214,6 @@
                         <div class="card-footer ">
                             <div class="row">
                                 <div class="col-md-6 text-center">
-                                    <button type="delete" class="btn btn-info btn-round">{{ __('Hapus') }}</button>
-                                </div>
-                                <div class="col-md-6 text-center">
                                     <button type="submit" class="btn btn-info btn-round">{{ __('Save Changes') }}</button>
                                 </div>
                             </div>

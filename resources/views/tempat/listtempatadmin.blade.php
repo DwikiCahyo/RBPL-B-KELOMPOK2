@@ -14,7 +14,7 @@
                     <div class="col-md-8">
                     <h2>{{$t->NamaTempat}}</h2>
                     <p>{{$t->DeskripsiTempat}}</p>
-                    <a href="{{ route('detailTempat',$t->id) }}" class="btn btn-primary">Lihat</a>
+                    <a href="{{ route('detailTempatAdmin',$t->id) }}" class="btn btn-primary">Lihat</a>
                     </div>
                 </div>
             </div>
@@ -22,4 +22,7 @@
         </div>
     </div>
     <div class="col-md-2"></div>
+    <div class="text-right fixed-bottom mt-5 mr-5 ml-5">
+    <a href="/tambahtempat"> <i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i></a>
+    </div>
 @endsection

@@ -3,7 +3,7 @@
     'elementActive' => 'dashboard'
 ])
 
-@section('content')
+{{-- @section('content')
     <div class="content">
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
@@ -177,7 +177,7 @@
             </div>
         </div>
     </div>
-@endsection
+@endsection --}}
 
 @push('scripts')
     <script>
