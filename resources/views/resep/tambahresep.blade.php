@@ -18,7 +18,7 @@
                         </label>
                         <input id="" value="{{old('namaresep')}}" name="namaresep" type="text" class="form-control  @error('namaresep') is-invalid @enderror" placeholder="">
                         @error('namaresep')
-                           <div class="invalid-feedback">{{$message}}</div>
+                           <div class="invalid-feedback" >{{$message}}</div>
                         @enderror
                      </div>
 
@@ -51,7 +51,7 @@
                         </label>
                         <textarea id="" name="langkahLangkah" placeholder="" class="form-control @error('langkahLangkah') is-invalid @enderror" rows="20"> {{old('langkahLangkah')}}</textarea>
                         @error('langkahLangkah')
-                        <div class="invalid-feedback">{{$message}}</div>
+                        <div class="invalid-feedback" >{{$message}}</div>
                         @enderror
                      </div>
 
@@ -93,7 +93,10 @@
                      <div class="input-group">
                         <div class="custom-file">
                            <label for="">Gambar Masakan</label>
-                           <input type="file" id="gambar" name="FotoResep" style="display:block;" />
+                           <input type="file" id="gambar" name="FotoResep" style="display:block;" class="@error('FotoResep') is-invalid @enderror"/>
+                           @error('FotoResep')
+                           <div class="invalid-feedback" style="display: block">{{$message}}</div>
+                           @enderror
 
                         </div>
                      </div>

@@ -37,6 +37,7 @@ class ResepController extends Controller
             'deskripsi'=>'required|max:500',
             'bahan'=>'required|max:5000',
             'langkahLangkah'=>'required|max:5000',
+            'FotoResep'=>'required',
         ]);
         // $resep = new Resep([
         //     'NamaResep' => $request->get('namaresep'),
