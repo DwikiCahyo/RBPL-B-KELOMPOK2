@@ -73,7 +73,7 @@ class ResepController extends Controller
             'WaktuMakan'=> $request->waktuMakan,
           ]);
 
-          $request->session()->flash('alert-success', 'Resep Berhasil Ditambahkan!');
+          $request->session()->flash('alert-success', 'Resep Berhasil Ditambahkan :)');
 
           return redirect('listreseppengguna');
 
@@ -109,6 +109,7 @@ class ResepController extends Controller
     $resep->WaktuMakan=$request->WaktuMakan;
 
     $resep->save();
+    $request->session()->flash('alert-success', 'Resep Berhasil di Ubah!');
 
     return redirect('/listreseppengguna');
 

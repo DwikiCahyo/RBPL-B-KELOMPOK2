@@ -4,6 +4,15 @@
 
 @section('content')
 <div class="content mt-5 mr-5 ml-5">
+
+    <!-- Alert Success-->
+    <div class="flash-message">
+        @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+          @if(Session::has('alert-' . $msg))
+          <h6 class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></h6>
+          @endif
+        @endforeach
+      </div>
     <!--Button Search-->
     <div class="container">
         <form class="form" action="{{ route('seacrhResep') }}" method = "GET" >
