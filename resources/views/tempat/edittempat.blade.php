@@ -32,16 +32,58 @@
                         <label for="" class="font-weight-bold">
                            kota
                         </label>
-                        <textarea id="" name="Kota" placeholder="" class="form-control " value="{{$tempats['Kota']}}"
-                           rows="3"></textarea>
+                        <select id="" name="Kota" class="custom-select">
+                            <option value="Surabaya">Surabaya</option>
+                        </select>
                      </div>
                      <!-- content -->
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
                            kecamatan
                         </label>
-                        <textarea id="inputlangkah" name="Kecamatan" placeholder="" class="form-control " value="{{$tempats['Kecamatan']}}"
-                           rows="20"></textarea>
+                        <select id="" name="Kecamatan" class="custom-select">
+                            <optgroup label="Surabaya Barat">
+                               <option value="Asemrowo">Asemrowo</option>
+                               <option value="Benowo">Benowo</option>
+                               <option value="Lakarsantri">Lakarsantri</option>
+                               <option value="Pakal">Pakal</option>
+                               <option value="Sambikerep">Sambikerep</option>
+                               <option value="Suko Manunggal">Suko Manunggal</option>
+                               <option value="Tandes">Tandes</option>
+                            </optgroup>
+                            <optgroup label="Surabaya Selatan">
+                               <option value="Dukuh Pakis">Dukuh Pakis</option>
+                               <option value="Gayungan">Gayungan</option>
+                               <option value="Jambangan">Jambangan</option>
+                               <option value="Karang Pilang">Karang Pilang</option>
+                               <option value="Sawahan">Sawahan</option>
+                               <option value="Wiyung">Wiyung</option>
+                               <option value="Wonocolo">Wonocolo</option>
+                               <option value="Wonokromo">Wonokromo</option>
+                            </optgroup>
+                            <optgroup label="Surabaya Timur">
+                               <option value="Gubeng">Gubeng</option>
+                               <option value="Gunung Anyar">Gunung Anyar</option>
+                               <option value="Mulyorejo">Mulyorejo</option>
+                               <option value="Rungkut">Rungkut</option>
+                               <option value="Sukolilo">Sukolilo</option>
+                               <option value="Tambaksari">Tambaksari</option>
+                               <option value="Tenggilis Mejoyo">Tenggilis Mejoyo</option>
+                            </optgroup>
+                            <optgroup label="Surabaya Utara">
+                               <option value="Bulak">Bulak</option>
+                               <option value="Kenjeran">Kenjeran</option>
+                               <option value="Krembangan">Krembangan</option>
+                               <option value="Pabean Cantian">Pabean Cantian</option>
+                               <option value="Semampir">Semampir</option>
+                            </optgroup>
+                            <optgroup label="Surabaya Pusat">
+                               <option value="Bubutan">Bubutan</option>
+                               <option value="Genteng">Genteng</option>
+                               <option value="Simokerto">Simokerto</option>
+                               <option value="Tegalsari">Tegalsari</option>
+                            </optgroup>
+                        </select>
                      </div>
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
@@ -61,8 +103,7 @@
                         </select>
                      </div>
                   </div>
-
-                           <a class="btn btn-warning px-4" href="{{ config('app.url')}}/listtempat">Kembali</a>
+                           <a class="btn btn-warning px-4" href="{{ config('app.url')}}/listtempatadmin">Kembali</a>
                            <button type="submit" class="btn btn-primary px-4">
                               Simpan
                            </button>

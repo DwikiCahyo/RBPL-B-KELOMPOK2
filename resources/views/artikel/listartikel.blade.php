@@ -4,7 +4,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-2"></div>
-    <div class="col-md-8">
+    <div class="col-md-8 d-flex align-items-stretch">
         <div class="Container mt-5">
           @foreach ($artikels as $a)
             <div class="card">

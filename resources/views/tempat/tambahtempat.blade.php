@@ -28,15 +28,57 @@
                         <label for="" class="font-weight-bold">
                            Kota
                         </label>
-                        <input id="" value="" name="Kota" type="text" class="form-control"
-                           placeholder="" />
+                        <select id="" name="Kota" class="custom-select">
+                           <option value="Surabaya">Surabaya</option>
+                        </select>
                      </div>
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
-                            Kecamatan
+                           Kota
                         </label>
-                        <input id="" value="" name="Kecamatan" type="text" class="form-control"
-                           placeholder="" />
+                        <select id="" name="Kecamatan" class="custom-select">
+                        <optgroup label="Surabaya Barat">
+                           <option value="Asemrowo">Asemrowo</option>
+                           <option value="Benowo">Benowo</option>
+                           <option value="Lakarsantri">Lakarsantri</option>
+                           <option value="Pakal">Pakal</option>
+                           <option value="Sambikerep">Sambikerep</option>
+                           <option value="Suko Manunggal">Suko Manunggal</option>
+                           <option value="Tandes">Tandes</option>
+                        </optgroup>
+                        <optgroup label="Surabaya Selatan">
+                           <option value="Dukuh Pakis">Dukuh Pakis</option>
+                           <option value="Gayungan">Gayungan</option>
+                           <option value="Jambangan">Jambangan</option>
+                           <option value="Karang Pilang">Karang Pilang</option>
+                           <option value="Sawahan">Sawahan</option>
+                           <option value="Wiyung">Wiyung</option>
+                           <option value="Wonocolo">Wonocolo</option>
+                           <option value="Wonokromo">Wonokromo</option>
+                        </optgroup>
+                        <optgroup label="Surabaya Timur">
+                           <option value="Gubeng">Gubeng</option>
+                           <option value="Gunung Anyar">Gunung Anyar</option>
+                           <option value="Mulyorejo">Mulyorejo</option>
+                           <option value="Rungkut">Rungkut</option>
+                           <option value="Sukolilo">Sukolilo</option>
+                           <option value="Tambaksari">Tambaksari</option>
+                           <option value="Tenggilis Mejoyo">Tenggilis Mejoyo</option>
+                        </optgroup>
+                        <optgroup label="Surabaya Utara">
+                           <option value="Bulak">Bulak</option>
+                           <option value="Kenjeran">Kenjeran</option>
+                           <option value="Krembangan">Krembangan</option>
+                           <option value="Pabean Cantian">Pabean Cantian</option>
+                           <option value="Semampir">Semampir</option>
+                        </optgroup>
+                        <optgroup label="Surabaya Pusat">
+                           <option value="Bubutan">Bubutan</option>
+                           <option value="Genteng">Genteng</option>
+                           <option value="Simokerto">Simokerto</option>
+                           <option value="Tegalsari">Tegalsari</option>
+                        </optgroup>
+                        </select>
                      </div>
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
@@ -57,9 +99,12 @@
                                  <option value="Supermarket">Supermarket</option>
                               </select>
                            </div>
+                           <div>
+                               <label for="input-group"class="font-weight-bold">Foto Tempat</label>
+                           </div>
                            <div class="input-group">
                             <div class="custom-file">
-                               <label for="">Pilih Gambar </label>
+                               <label for="">Pilih Gambar : </label>
                                <input type="file" id="gambar" name="FotoTempat" style="display:block;" />
                             </div>
                            </div>

@@ -102,7 +102,7 @@
                   <div class="row mr-5 ml-1">
                      <div class="col-md-12">
                         <div class="float-right">
-                           <a class="btn btn-warning px-4" href="{{ config('app.url')}}/listresep">Kembali</a>
+                           <a class="btn btn-warning px-4" href="{{ config('app.url')}}/listreseppengguna">Kembali</a>
                            <button type="submit" class="btn btn-primary px-4">
                               Simpan
                            </button>

@@ -153,6 +153,7 @@
                     @csrf
                 </form>
                 @if(Auth::guest())
+                <a class="dropdown-item" href="{{ route('register') }}">{{ __('Register') }}</a>
                 <a class="dropdown-item" href="{{ route('login') }}">{{ __('Log In') }}</a>
                 @else
                 <a class="dropdown-item" onclick="document.getElementById('formLogOut').submit();">{{ __('Log out') }}</a>

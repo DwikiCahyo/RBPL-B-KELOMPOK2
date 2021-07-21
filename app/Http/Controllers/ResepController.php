@@ -75,7 +75,7 @@ class ResepController extends Controller
 
           $request->session()->flash('alert-success', 'Resep Berhasil Ditambahkan!');
 
-          return redirect('/');
+          return redirect('listreseppengguna');
 
 
 
@@ -110,7 +110,7 @@ class ResepController extends Controller
 
     $resep->save();
 
-    return redirect('/');
+    return redirect('/listreseppengguna');
 
   }
 

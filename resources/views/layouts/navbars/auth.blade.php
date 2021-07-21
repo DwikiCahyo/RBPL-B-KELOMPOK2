@@ -11,12 +11,6 @@
     </div>
     <div class="sidebar-wrapper">
         <ul class="nav">
-            <li class="{{ $elementActive == 'dashboard' ? 'active' : '' }}">
-                <a href="{{ route('page.index', 'dashboard') }}">
-                    <i class="nc-icon nc-bank"></i>
-                    <p>{{ __('Dashboard') }}</p>
-                </a>
-            </li>
             {{-- <li class="{{ $elementActive == 'user' || $elementActive == 'profile' ? 'active' : '' }}">
                 <a data-toggle="collapse" aria-expanded="true" href="#laravelExamples">
                 <i class="fa fa-user-circle fa-4x" aria-hidden="true"></i>
@@ -44,21 +38,33 @@
             </li> --}}
             <li class="{{ $elementActive == 'icons' ? 'active' : '' }}">
                 <!-- <a href="{{ route('page.index', 'icons') }}"> -->
-                    <a href="/listresep">
+                    @if(Auth::user()->role == "admin")
+                        <a href="/listresepadmin">
+                    @else
+                        <a href="/listreseppengguna">
+                    @endif
                 <i class="fa fa-cutlery fa-4x" aria-hidden="true"></i>
                     <p>{{ __('RESEP') }}</p>
                 </a>
             </li>
             <li class="{{ $elementActive == 'map' ? 'active' : '' }}">
                 <!-- <a href="{{ route('page.index', 'map') }}"> -->
-                <a href="/listartikeladmin">
+                @if(Auth::user()->role == "admin")
+                    <a href="/listartikeladmin">
+                @else
+                    <a href="/listartikel">
+                @endif
                 <i class="fa fa-sticky-note fa-4x" aria-hidden="true"></i>
                     <p>{{ __('ARTIKEL') }}</p>
                 </a>
             </li>
             <li class="{{ $elementActive == 'notifications' ? 'active' : '' }}">
                 <!-- <a href="{{ route('page.index', 'notifications') }}"> -->
-                <a href="/listtempatadmin">
+                @if(Auth::user()->role == "admin")
+                    <a href="/listtempatadmin">
+                @else
+                    <a href="/listtempat">
+                @endif
                 <i class="fa fa-map-marker fa-4x" aria-hidden="true"></i>
                     <p>{{ __('TEMPAT') }}</p>
                 </a>
