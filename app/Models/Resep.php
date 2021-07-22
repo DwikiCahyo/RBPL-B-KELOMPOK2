@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Resep extends Model
 {
+    use HasFactory;
     protected $fillabel = [
         'id',
         'NamaResep',
