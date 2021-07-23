@@ -1,3 +1,4 @@
+{{-- Dwiki Cahyo/05211940000134 --}}
 @extends('layouts.receppe',['backgroundImagePath' => 'img/bg/receppe.jpg'
 ])
 @section('title','List Resep')
@@ -6,7 +7,7 @@
 <div class="content mt-5 mr-5 ml-5">
     <!--Button Search-->
     <div class="container">
-        <form class="form" action="{{ route('seacrhResep') }}" method = "GET" >
+        <form class="form" action="{{ route('searchResep') }}" method = "GET" >
             <input class="form-control mr-sm-2" name="search" type="search" placeholder="Cari Berdasarkan Nama Resep , Rasa Dan Waktu Makan" aria-label="Search" value="{{ old('search') }}">
             <button class="btn btn-warning btn-sm" type="submit">Cari</button>
           </form>

@@ -1,3 +1,4 @@
+{{-- Alfado Rafly Hermawan/05211940000090 --}}
 @extends('layouts.receppe')
 @section('title','detail tempat')
 @section('content')

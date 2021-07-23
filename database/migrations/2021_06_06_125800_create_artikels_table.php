@@ -15,9 +15,9 @@ class CreateArtikelsTable extends Migration
     {
         Schema::create('artikels', function (Blueprint $table) {
             $table->increments('id',10);
-            $table->char('JudulArtikel',100);
-            $table->string('DeskripsiArtikel',10000);
-            $table->binary('FotoArtikel');
+            $table->char('JudulArtikel',255);
+            $table->longText('DeskripsiArtikel');
+            $table->binary('FotoArtikel')->nullable();
 
         });
     }

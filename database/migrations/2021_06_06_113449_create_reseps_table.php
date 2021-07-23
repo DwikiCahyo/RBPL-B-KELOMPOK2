@@ -19,7 +19,7 @@ class CreateResepsTable extends Migration
             $table->string('DeskripsiResep',500);
             $table->string('Bahan',5000);
             $table->string('LangkahLangkah',5000);
-            $table->binary('FotoResep');
+            $table->binary('FotoResep')->nullable();
             $table->char('Rasa',10);
             $table->char('WaktuMakan',10);
 

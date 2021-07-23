@@ -1,3 +1,4 @@
+{{-- Lacsita Devi Oktaviana / 05211940000028 --}}
 @extends('layouts.receppe')
 @section('title','Resep')
 
@@ -50,7 +51,7 @@
           <div class="row mr-5 ml-1">
             <div class="col-md-12">
                <div class="float-left">
-                  <a class="btn btn-primary btn-md" href="{{ config('app.url')}}/listresep">Kembali</a>
+                  <a class="btn btn-primary btn-md" href="{{ config('app.url')}}/listreseppengguna">Kembali</a>
                </div>
             </div>
          </div>

@@ -1,3 +1,4 @@
+{{-- Lacsita Devi Oktaviana / 05211940000028 --}}
 @extends('layouts.receppe')
 @section('title','Tambah Tempat')
 
@@ -14,15 +15,20 @@
                         <label for="" class="font-weight-bold">
                            Nama Tempat
                         </label>
-                        <input id="" value="" name="NamaTempat" type="text" class="form-control"
-                           placeholder="" />
+                        <input id="" value="{{old('NamaTempat')}}" name="NamaTempat" type="text" class="form-control @error('NamaTempat') is-invalid @enderror" placeholder="" />
+                        @error('NamaTempat')
+                           <div class="invalid-feedback" >{{$message}}</div>
+                        @enderror
                      </div>
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
                            Deskripsi
                         </label>
-                        <textarea id="" name="DeskripsiTempat" placeholder="" class="form-control "
-                         style="width: 100"></textarea>
+                        <textarea value="" id="" name="DeskripsiTempat" placeholder="" class="form-control @error('DeskripsiTempat') is-invalid @enderror"
+                         style="width: 100">{{old('DeskripsiTempat')}}</textarea>
+                        @error('DeskripsiTempat')
+                           <div class="invalid-feedback" >{{$message}}</div>
+                        @enderror
                      </div>
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
@@ -34,7 +40,7 @@
                      </div>
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
-                           Kota
+                           Kecamatan
                         </label>
                         <select id="" name="Kecamatan" class="custom-select">
                         <optgroup label="Surabaya Barat">
@@ -84,8 +90,11 @@
                         <label for="" class="font-weight-bold">
                             Alamat
                         </label>
-                        <input id="" value="" name="LokasiTempat" type="text" class="form-control"
+                        <input id="" value="{{old('LokasiTempat')}}" name="LokasiTempat" type="text" class="form-control @error('LokasiTempat') is-invalid @enderror"
                            placeholder="" />
+                        @error('LokasiTempat')
+                           <div class="invalid-feedback" >{{$message}}</div>
+                        @enderror
                      </div>
                      <div class="row">
                         <div class="col-md-12">
@@ -106,6 +115,9 @@
                             <div class="custom-file">
                                <label for="">Pilih Gambar : </label>
                                <input type="file" id="gambar" name="FotoTempat" style="display:block;" />
+                               @error('FotoTempat')
+                                <div class="invalid-feedback" style="display: block">{{$message}}</div>
+                               @enderror
                             </div>
                            </div>
                         </div>

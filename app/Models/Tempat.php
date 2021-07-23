@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tempat extends Model
 {
+    use HasFactory;
     protected $fillabel = [
         'id',
         'NamaTempat',

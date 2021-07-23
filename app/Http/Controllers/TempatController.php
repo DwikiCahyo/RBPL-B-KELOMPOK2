@@ -6,6 +6,7 @@ use App\Models\Tempat;
 use Illuminate\Http\Request;
 use App\Models\Answer;
 use App\Models\Comment;
+use Illuminate\Support\Facades\DB;
 
 class TempatController extends Controller
 {
@@ -26,6 +27,15 @@ class TempatController extends Controller
      //Menyimpan file form tambah tempat
     public function store(Request $request){
          //Menyimpan file gambar
+         $request->validate([
+            'NamaTempat'=>'required|min:5|max:200',
+            'DeskripsiTempat'=>'required|max:3000',
+            'Kota'=>'required|max:10',
+            'Kecamatan'=>'required|max:30',
+            'LokasiTempat'=>'required|max:1000',
+            'JenisKategori'=>'required|max:10',
+            'FotoTempat'=>'required',
+        ]);
         $FotoTempat = $request->file('FotoTempat');
         $nama_foto_tempat = time()."_".$FotoTempat->getClientOriginalName();
         //upload foto
@@ -41,6 +51,7 @@ class TempatController extends Controller
             'LokasiTempat'=> $request->LokasiTempat,
             'JenisKategori'=> $request->JenisKategori,
           ]);
+        $request->session()->flash('alert-success', 'Tempat Berhasil Ditambahkan :)');
         return redirect('listtempatadmin');
     }
     //menampilkan view detail tempat
@@ -67,7 +78,7 @@ class TempatController extends Controller
 
 
     $tempats->save();
-
+    $request->session()->flash('alert-success', 'Tempat Berhasil di Ubah!');
     return redirect('listtempatadmin');
     }
     public function hapusTempat($id)
@@ -77,4 +88,20 @@ class TempatController extends Controller
 
      return redirect('listtempatadmin');
     }
+
+    public function searchTempat(Request $request){
+
+        $search = $request->search;
+
+        $tempats = DB::table('tempats')
+        ->where('NamaTempat','like',"%".$search."%")
+            ->orWhere('JenisKategori', 'like', '%' . $search . '%')
+            ->orWhere('Kecamatan', 'like', '%' . $search . '%')
+            ->paginate();
+
+            return view('tempat.listtempat',['tempats' => $tempats]);
+
+
+    }
+
 }

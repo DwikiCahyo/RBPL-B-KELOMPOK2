@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Artikel;
 use App\Models\Answer;
 use App\Models\Comment;
+use Illuminate\Support\Facades\DB;
 
 class ArtikelController extends Controller
 {
@@ -25,6 +26,11 @@ class ArtikelController extends Controller
      }
      //Menyimpan file form tambah artikel
     public function store(Request $request){
+        $request->validate([
+            'JudulArtikel'=>'required|min:5|max:255',
+            'DeskripsiArtikel'=>'required|max:20000',
+            'FotoArtikel'=>'required',
+        ]);
          //Menyimpan file gambar
         $FotoArtikel = $request->file('FotoArtikel');
         $nama_foto_artikel = time()."_".$FotoArtikel->getClientOriginalName();
@@ -37,6 +43,7 @@ class ArtikelController extends Controller
             'JudulArtikel'=>$request->JudulArtikel,
             'DeskripsiArtikel' =>$request->DeskripsiArtikel,
           ]);
+        $request->session()->flash('alert-success', 'Artikel Berhasil ditambahkan!');
         return redirect('listartikeladmin');
     }
     //menampilkan view detail artikel
@@ -58,7 +65,7 @@ class ArtikelController extends Controller
     $artikels->DeskripsiArtikel=$request->DeskripsiArtikel;
 
     $artikels->save();
-
+    $request->session()->flash('alert-success', 'Artikel Berhasil di Ubah!');
     return redirect('listartikeladmin');
     }
 
@@ -68,5 +75,16 @@ class ArtikelController extends Controller
      $artikels->delete();
 
      return redirect('listartikeladmin');
+    }
+
+    public function searchArtikel(Request $request){
+
+        $search = $request->search;
+
+        $artikels = DB::table('artikels')
+        ->where('JudulArtikel','like',"%".$search."%")
+            ->paginate();
+
+            return view('artikel.listartikel',['artikels' => $artikels]);
     }
 }

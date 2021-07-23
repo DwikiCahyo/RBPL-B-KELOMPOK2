@@ -1,3 +1,4 @@
+{{-- Ika Rahma A/05211940000044 --}}
 @extends('layouts.receppe')
 @section('title','Tambah Artikel')
 
@@ -15,22 +16,30 @@
                         <label for="" class="font-weight-bold">
                            Judul Artikel
                         </label>
-                        <input id="" value="" name="JudulArtikel" type="text" class="form-control"
+                        <input id="" value="{{old('JudulArtikel')}}" name="JudulArtikel" type="text" class="form-control  @error('JudulArtikel') is-invalid @enderror"
                            placeholder="" />
+                        @error('JudulArtikel')
+                           <div class="invalid-feedback" >{{$message}}</div>
+                        @enderror
                      </div>
 
                      <div class="form-group">
                         <label for="" class="font-weight-bold">
                            Deskripsi
                         </label>
-                        <textarea id="" name="DeskripsiArtikel" placeholder="" class="form-control "
-                         style="width: 100"></textarea>
+                        <textarea id="" value="" name="DeskripsiArtikel" placeholder="" class="form-control  @error('DeskripsiArtikel') is-invalid @enderror"
+                         style="width: 100">{{old('DeskripsiArtikel')}}</textarea>
+                         @error('DeskripsiArtikel')
+                         <div class="invalid-feedback" >{{$message}}</div>
+                         @enderror
                      </div>
                      <div class="input-group">
                         <div class="custom-file">
                            <label for="">Pilih Gambar </label>
                            <input type="file" id="gambar" name="FotoArtikel" style="display:block;" />
-
+                           @error('FotoArtikel')
+                            <div class="invalid-feedback" style="display: block">{{$message}}</div>
+                           @enderror
                         </div>
                      </div>
                   </div>

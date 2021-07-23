@@ -1,3 +1,4 @@
+{{-- Ramadhani Galuh/05211940000037 --}}
 @extends('layouts.receppe')
 @section('title','detail artikel')
 @section('content')
@@ -15,7 +16,7 @@
             <a href="{{ route('editArtikel',$artikels->id) }}">
                 <button class="btn btn-warning btn-lg" type="button">Edit</button>
             </a>
-            <form action="{{ route('hapusArtikel',$artikels->id) }}" class="d-inline" onsubmit="return confirm('Apakah anda ingin menghapus Resep')" method ="POST">
+            <form action="{{ route('hapusArtikel',$artikels->id) }}" class="d-inline" onsubmit="return confirm('Apakah anda ingin menghapus Artikel')" method ="POST">
                 @method('delete')
                 @csrf
                 <button class="btn btn-danger btn-lg ">

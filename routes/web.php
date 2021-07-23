@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 //RESEP
 Route::get('/', 'App\Http\Controllers\ResepController@viewlistresep');
 Route::get('/listresepadmin', 'App\Http\Controllers\ResepController@viewlistresepadmin');
-Route::get('/listreseppengguna', 'App\Http\Controllers\ResepController@viewlistreseppengguna');
+Route::get('/listreseppengguna', 'App\Http\Controllers\ResepController@viewlistreseppengguna')->name('listreseppengguna');
 //Tambah resep
 Route::post('/tambahresep/store','App\Http\Controllers\ResepController@store');
 Route::get('/tambahresep', 'App\Http\Controllers\ResepController@tambahresep')->middleware('auth')->middleware('CheckRole:pengguna');
@@ -25,12 +25,12 @@ Route::patch('detailresep/editresep/updateresep/{id}', [App\Http\Controllers\Res
 //hapus resep
 Route::delete('detailresep/hapusresep/{id}', [App\Http\Controllers\ResepController::class, 'hapusresep'])->name('hapusResep')->middleware('auth')->middleware('CheckRole:pengguna');
 //search resep
-Route::get('listresep/searchResep', [App\Http\Controllers\ResepController::class, 'searchResep'])->name('seacrhResep');
+Route::get('listresep/searchResep', [App\Http\Controllers\ResepController::class, 'searchResep'])->name('searchResep');
 
 
 //TEMPAT ROUTE
-Route::get('/listtempat', 'App\Http\Controllers\TempatController@viewlisttempat');
-Route::get('/listtempatadmin', 'App\Http\Controllers\TempatController@viewlisttempatadmin');
+Route::get('/listtempat', 'App\Http\Controllers\TempatController@viewlisttempat')->name('listtempat');
+Route::get('/listtempatadmin', 'App\Http\Controllers\TempatController@viewlisttempatadmin')->name('listtempatadmin');
 Route::get('/tambahtempat', 'App\Http\Controllers\TempatController@tambahtempat')->middleware('auth')->middleware('CheckRole:admin');
 Route::post('/tambahtempat/store','App\Http\Controllers\TempatController@store');
 Route::get('detailTempat/{id}', [App\Http\Controllers\TempatController::class, 'viewdetailtempat'])->name('detailTempat');
@@ -38,10 +38,10 @@ Route::get('detailTempatAdmin/{id}', [App\Http\Controllers\TempatController::cla
 Route::get('editTempat/{id}', [App\Http\Controllers\TempatController::class,'viewedittempat'])->name('editTempat')->middleware('auth')->middleware('CheckRole:admin');
 Route::patch('editTempat/updatetempat/{id}', [App\Http\Controllers\TempatController::class, 'update'])->name('updateTempat');
 Route::delete('hapustempat/{id}', [App\Http\Controllers\TempatController::class, 'hapusTempat'])->name('hapusTempat');
-
+Route::get('listtempat/searchTempat', [App\Http\Controllers\TempatController::class, 'searchTempat'])->name('searchTempat');
 //ARTIKEL ROUTE
-Route::get('/listartikel', 'App\Http\Controllers\ArtikelController@viewlistartikel');
-Route::get('/listartikeladmin', 'App\Http\Controllers\ArtikelController@viewlistartikeladmin');
+Route::get('/listartikel', 'App\Http\Controllers\ArtikelController@viewlistartikel')->name('listArtikel');
+Route::get('/listartikeladmin', 'App\Http\Controllers\ArtikelController@viewlistartikeladmin')->name('listArtikelAdmin');
 Route::get('/tambahartikel', 'App\Http\Controllers\ArtikelController@tambahartikel')->middleware('auth')->middleware('CheckRole:admin');
 Route::post('/tambahartikel/store','App\Http\Controllers\ArtikelController@store');
 Route::get('detailartikel/{id}', [App\Http\Controllers\ArtikelController::class, 'viewdetailartikel'])->name('detailArtikel');
@@ -49,6 +49,7 @@ Route::get('detailartikelAdmin/{id}', [App\Http\Controllers\ArtikelController::c
 Route::get('editartikel/{id}', [App\Http\Controllers\ArtikelController:: class,'vieweditartikel'])->name('editArtikel')->middleware('auth')->middleware('CheckRole:admin');
 Route::patch('editartikel/updateartikel/{id}', [App\Http\Controllers\ArtikelController::class, 'update'])->name('updateArtikel');
 Route::delete('hapusartikel/{id}', [App\Http\Controllers\ArtikelController::class, 'hapusArtikel'])->name('hapusArtikel');
+Route::get('listartikel/searchArtikel', [App\Http\Controllers\ArtikelController::class, 'searchArtikel'])->name('searchArtikel');
 
 
 Auth::routes();

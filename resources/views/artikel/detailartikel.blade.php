@@ -1,3 +1,4 @@
+{{-- Ika Rahma A/05211940000044 --}}
 @extends('layouts.receppe')
 @section('title','detail artikel')
 @section('content')
@@ -11,7 +12,7 @@
             <img src="{{ asset('paper') }}/image/{{ $artikels->FotoArtikel }}" style="margin-left: auto; margin-right: auto; width: 50%; display: block;">
             <br>
             <br>
-            <p>{{$artikels->DeskripsiArtikel}}</p>
+            <p>{!!nl2br(e($artikels->DeskripsiArtikel))!!}</p>
         </div>
       </div>
     </div>

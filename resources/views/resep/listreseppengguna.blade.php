@@ -1,3 +1,4 @@
+{{-- Ramadhani Galuh/05211940000037 --}}
 @extends('layouts.receppe',['backgroundImagePath' => 'img/bg/receppe.jpg'
 ])
 @section('title','List Resep')
@@ -15,7 +16,7 @@
       </div>
     <!--Button Search-->
     <div class="container">
-        <form class="form" action="{{ route('seacrhResep') }}" method = "GET" >
+        <form class="form" action="{{ route('searchResep') }}" method = "GET" >
             <input class="form-control mr-sm-2" name="search" type="search" placeholder="Cari Berdasarkan Nama Resep , Rasa Dan Waktu Makan" aria-label="Search" value="{{ old('search') }}">
             <button class="btn btn-warning btn-sm" type="submit">Cari</button>
           </form>
